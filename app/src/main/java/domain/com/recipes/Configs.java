@@ -32,8 +32,8 @@ public class Configs extends Application {
 
 
     // IMPORTANT: Reaplce the red strings below with your own Application ID and Client Key of your app on back4app
-    public static String PARSE_APP_ID = "FH5tG5ceS6VNYphhG2bCygq4jG984qIv4wsCWlbV";
-    public static String PARSE_CLIENT_KEY = "GcIndXBrHmseaKc2b5s1nlrWuuRFWccXJcCIgw2W";
+    public static String PARSE_APP_ID = "hrpYkU8Kvjqu4XaV7VAW5b62EsDRqRCLmZC9izB3";
+    public static String PARSE_CLIENT_KEY = "AkAJXQLAZDfllNSkweRL9DmJgdB8CHtPQIUHRF24";
     //-----------------------------------------------------------------------------
 
 
