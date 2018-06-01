@@ -164,10 +164,11 @@ public class RecipeDetails extends AppCompatActivity {
 
 
         // Init AdMob banner
+        /*
         AdView mAdView =  findViewById(R.id.admobBanner);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-
+*/
 
     }// end onCreate()
 

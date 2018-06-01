@@ -335,12 +335,13 @@ public class AddEditRecipe extends AppCompatActivity {
           @Override
           public void onClick(View view) {  finish(); }});
 
-
+/*
 
         // Init AdMob banner
         AdView mAdView =  findViewById(R.id.admobBanner);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+*/
 
 
     }// end onCreate()

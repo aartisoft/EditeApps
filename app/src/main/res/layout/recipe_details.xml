@@ -506,7 +506,7 @@
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
-
+<!--
     <com.google.android.gms.ads.AdView
         android:id="@+id/admobBanner"
         android:layout_width="wrap_content"
@@ -518,7 +518,7 @@
     </com.google.android.gms.ads.AdView>
 
 
-    <!-- ADMOB BANNER VIEW -->
+   ADMOB BANNER VIEW -->
 
 
 </RelativeLayout>
