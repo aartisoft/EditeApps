@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/cCatImage"
         android:layout_alignParentEnd="true"
+        android:paddingLeft="15dp"
         android:layout_alignTop="@+id/cCatImage"
         android:layout_marginRight="10dp"
         android:layout_toEndOf="@+id/cCatImage"

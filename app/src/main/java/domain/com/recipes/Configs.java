@@ -41,16 +41,17 @@ public class Configs extends Application {
 
     // FOOD CATEGORIES ARRAY (editable)
     public static String[] categoriesArray = new String[] {
+            "Sandwich",
+            "Fahita",
+            "Soup",
             "Appetizer",
-            "Breakfast",
-            "Healthy",
-            "Holidays & Events",
-            "Main Dish",
-            "Seafood",
-            "Vegetarian",
             "Salad",
+            "Pasta",
+            "Main Dish",
             "Desserts",
-            "Beverage",
+            "Pizza",
+            "Burger Jumbo",
+            "Crepe",
 
             // You can add categories here...
             // IMPORTANT: Also remember to add the proper images into the 'drawable'  folder.
@@ -104,6 +105,7 @@ public class Configs extends Application {
     public static String  RECIPES_PREPARATION = "preparation";
     public static String  RECIPES_USER_POINTER = "userPointer";
     public static String  RECIPES_IS_REPORTED = "isReported";
+    //public static String  RECIPES_price = "price";
     public static String  RECIPES_REPORT_MESSAGE = "reportMessage";
     public static String  RECIPES_KEYWORDS = "keywords";
     public static String  RECIPES_CREATED_AT = "createdAt";

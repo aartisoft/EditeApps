@@ -287,7 +287,7 @@ public class AddEditRecipe extends AppCompatActivity {
                   recipeObj.put(Configs.RECIPES_INGREDIENTS, ingredientsTxt.getText().toString());
                   recipeObj.put(Configs.RECIPES_PREPARATION, preparationTxt.getText().toString());
                   recipeObj.put(Configs.RECIPES_IS_REPORTED, false);
-
+                  // recipeObj.put(Configs.RECIPES_price, "15");
                   // Save image
                   Bitmap bitmap = ((BitmapDrawable) coverImage.getDrawable()).getBitmap();
                   ByteArrayOutputStream stream = new ByteArrayOutputStream();

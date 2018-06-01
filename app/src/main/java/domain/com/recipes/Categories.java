@@ -91,11 +91,14 @@ public class Categories extends AppCompatActivity {
                 String imageName = catArray.get(position).toLowerCase();
 
                 // IMPORTANT: Set the correct png name for those Categories that have multiple words in their name
-                if (imageName.matches("holidays & events")) {
-                    imageName = "holidays_events";
-                } else if (imageName.matches("main dish")) {
+
+                if (imageName.matches("main dish")) {
                     imageName = "main_dish";
                 }
+                if (imageName.matches("burger jumbo")){
+                    imageName = "burger_jumbo";
+                }
+
 
                 int resID = getResources().getIdentifier(imageName , "drawable", getPackageName());
                 catImg.setImageResource(resID);
