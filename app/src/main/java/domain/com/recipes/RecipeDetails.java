@@ -110,7 +110,7 @@ public class RecipeDetails extends AppCompatActivity {
         videoTitleTxt = findViewById(R.id.rdVideoTitleTxt);
         preparationTxt = findViewById(R.id.rdPreparationTxt);
         ingredientsTxt = findViewById(R.id.rdIngredientsTxt);
-        Price = findViewById(R.id.Price);
+        Price = findViewById(R.id.priceNumber);
         priceNumber = findViewById(R.id.priceNumber);
 
         videoWebView = (WebView) findViewById(R.id.rdVideoWebView);
@@ -230,7 +230,7 @@ public class RecipeDetails extends AppCompatActivity {
                     // Get Recipe details
                     recipeTitleTxt.setText(recipeObj.getString(Configs.RECIPES_TITLE));
                     categoryTxt.setText(recipeObj.getString(Configs.RECIPES_CATEGORY));
-
+                    Price.setText(recipeObj.getString(Configs.RECIPES_price));
                     // Get Likes
                     if (recipeObj.getNumber(Configs.RECIPES_LIKES) != null) {
                         int likes = recipeObj.getInt(Configs.RECIPES_LIKES);

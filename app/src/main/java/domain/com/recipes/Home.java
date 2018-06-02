@@ -321,6 +321,8 @@ public class Home extends AppCompatActivity {
                                     TextView catTxt = finalCell.findViewById(R.id.crCategoryTxt);
                                     catTxt.setText(rObj.getString(Configs.RECIPES_CATEGORY));
 
+                                    TextView Price = finalCell.findViewById(R.id.crCategoryPrice);
+                                    Price.setText(rObj.getString(Configs.RECIPES_price));
                                     // Get Likes
 //                                    final TextView likesTxt = finalCell.findViewById(R.id.crLikesTxt);
 //                                    if (rObj.getNumber(Configs.RECIPES_LIKES) != null) {
