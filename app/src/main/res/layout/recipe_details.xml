@@ -18,6 +18,7 @@
         android:background="#fff">
 
         <Button
+            android:visibility="gone"
             android:id="@+id/rdShareButt"
             android:layout_width="44dp"
             android:layout_height="44dp"
@@ -27,6 +28,7 @@
             android:background="@drawable/share_butt"/>
 
         <Button
+            android:visibility="gone"
             android:id="@+id/rdReportButt"
             android:layout_width="44dp"
             android:layout_height="44dp"
@@ -104,6 +106,7 @@
                     android:background="#fff">
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdDifficultyTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -117,6 +120,7 @@
                         android:textSize="11sp"/>
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdVideoTitleTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -130,6 +134,7 @@
                         android:textSize="12sp"/>
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdSeparator"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -145,6 +150,7 @@
                         android:textSize="12sp" />
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdSep7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -160,6 +166,7 @@
                         android:textSize="12sp"/>
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdUserFullNameTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -174,6 +181,7 @@
                         android:textStyle="bold"/>
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdSep2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -216,6 +224,7 @@
 
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdAboutRecipeTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -302,6 +311,7 @@
                         android:textStyle="bold"/>
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                        android:visibility="gone"
                         android:id="@+id/crAvatarImg"
                         android:layout_width="44dp"
                         android:layout_height="44dp"
@@ -393,7 +403,7 @@
                                 android:gravity="center_vertical"
                                 android:paddingLeft="3dp"
                                 android:paddingRight="3dp"
-                                android:text="Resting: 10 min"
+                                android:text="Serving: 10 min"
                                 android:textAlignment="center"
                                 android:textColor="#333"
                                 android:textSize="10sp"
@@ -403,6 +413,7 @@
                     </RelativeLayout>
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdSep6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -444,6 +455,7 @@
                         android:textSize="12sp"/>
 
                     <Button
+                        android:visibility="gone"
                         android:id="@+id/rdAddToShoppingButt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -460,6 +472,8 @@
                         android:textStyle="bold"/>
 
                     <TextView
+
+                        android:visibility="gone"
                         android:id="@+id/rdSep3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -475,6 +489,8 @@
                         android:textSize="12sp"/>
 
                     <TextView
+                        android:visibility="gone"
+
                         android:id="@+id/textView14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -488,6 +504,8 @@
                         android:textStyle="bold"/>
 
                     <TextView
+                        android:visibility="gone"
+
                         android:id="@+id/rdPreparationTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -498,7 +516,7 @@
                         android:layout_marginTop="10dp"
                         android:text="loading..."
                         android:textSize="12sp"/>
-
+-->
 
                 </RelativeLayout>
 
