@@ -280,18 +280,18 @@ public class OtherUserProfile extends AppCompatActivity {
                                     catTxt.setText(rObj.getString(Configs.RECIPES_CATEGORY));
 
                                     // Get Likes
-                                    final TextView likesTxt = finalCell.findViewById(R.id.crLikesTxt);
-                                    if (rObj.getNumber(Configs.RECIPES_LIKES) != null) {
-                                        int likes = rObj.getInt(Configs.RECIPES_LIKES);
-                                        likesTxt.setText(Configs.roundThousandsIntoK(likes));
-                                    } else { likesTxt.setText("0"); }
+//                                    final TextView likesTxt = finalCell.findViewById(R.id.crLikesTxt);
+//                                    if (rObj.getNumber(Configs.RECIPES_LIKES) != null) {
+//                                        int likes = rObj.getInt(Configs.RECIPES_LIKES);
+//                                        likesTxt.setText(Configs.roundThousandsIntoK(likes));
+//                                    } else { likesTxt.setText("0"); }
 
                                     // Get Comments
-                                    final TextView commTxt = finalCell.findViewById(R.id.crCommentsTxt);
-                                    if (rObj.getNumber(Configs.RECIPES_COMMENTS) != null) {
-                                        int comments = rObj.getInt(Configs.RECIPES_COMMENTS);
-                                        commTxt.setText(Configs.roundThousandsIntoK(comments));
-                                    } else { commTxt.setText("0"); }
+//                                    final TextView commTxt = finalCell.findViewById(R.id.crCommentsTxt);
+//                                    if (rObj.getNumber(Configs.RECIPES_COMMENTS) != null) {
+//                                        int comments = rObj.getInt(Configs.RECIPES_COMMENTS);
+//                                        commTxt.setText(Configs.roundThousandsIntoK(comments));
+//                                    } else { commTxt.setText("0"); }
 
 
                                     // Get Cover Image
@@ -346,117 +346,117 @@ public class OtherUserProfile extends AppCompatActivity {
 
 
                                     // MARK: - LIKE BUTTON ---------------------------------------------
-                                    Button likeButt =  finalCell.findViewById(R.id.crLikeButt);
-                                    likeButt.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-
-                                            final ParseUser currUser = ParseUser.getCurrentUser();
-
-                                            // USER IS LOGGED IN
-                                            if (currUser.getUsername() != null) {
-
-                                                // Query Likes
-                                                ParseQuery<ParseObject> query = ParseQuery.getQuery(Configs.LIKES_CLASS_NAME);
-                                                query.whereEqualTo(Configs.LIKES_LIKED_BY,currUser);
-                                                query.whereEqualTo(Configs.LIKES_RECIPE_LIKED, rObj);
-                                                query.findInBackground(new FindCallback<ParseObject>() {
-                                                    public void done(List<ParseObject> objects, ParseException error) {
-                                                        if (error == null) {
-                                                            likesArray = objects;
-
-                                                            ParseObject likesObj = new ParseObject(Configs.LIKES_CLASS_NAME);
-
-                                                            if (likesArray.size() == 0) {
-                                                                // LIKE RECIPE -----------
-                                                                rObj.increment(Configs.RECIPES_LIKES, 1);
-                                                                rObj.saveInBackground();
-                                                                int likeInt = rObj.getInt(Configs.RECIPES_LIKES);
-                                                                likesTxt.setText(Configs.roundThousandsIntoK(likeInt));
-
-                                                                likesObj.put(Configs.LIKES_LIKED_BY, currUser);
-                                                                likesObj.put(Configs.LIKES_RECIPE_LIKED, rObj);
-                                                                likesObj.saveInBackground(new SaveCallback() {
-                                                                    @Override
-                                                                    public void done(ParseException e) {
-                                                                        if (e == null) {
-                                                                            Configs.simpleAlert("You've liked this recipe and saved into your Account!", OtherUserProfile.this);
-
-                                                                            // Send push notification
-                                                                            final String pushMessage = currUser.getString(Configs.USER_FULLNAME) + " liked your recipe: " + rObj.getString(Configs.RECIPES_TITLE);
-
-                                                                            HashMap<String, Object> params = new HashMap<String, Object>();
-                                                                            params.put("someKey", userPointer.getObjectId());
-                                                                            params.put("data", pushMessage);
-
-                                                                            ParseCloud.callFunctionInBackground("pushAndroid", params, new FunctionCallback<String>() {
-                                                                                @Override
-                                                                                public void done(String object, ParseException e) {
-                                                                                    if (e == null) {
-                                                                                        Configs.hidePD();
-
-                                                                                        Log.i("log-", "PUSH SENT TO: " + userPointer.getString(Configs.USER_USERNAME)
-                                                                                                + "\nMESSAGE: "
-                                                                                                + pushMessage);
-
-                                                                                    // Error in Cloud Code
-                                                                                    } else {
-                                                                                        Configs.hidePD();
-                                                                                        Configs.simpleAlert(e.getMessage(), OtherUserProfile.this);
-                                                                            }}});
-
-
-                                                                            // Save activity
-                                                                            ParseObject actObj = new ParseObject(Configs.ACTIVITY_CLASS_NAME);
-                                                                            actObj.put(Configs.ACTIVITY_CURRENT_USER, userPointer);
-                                                                            actObj.put(Configs.ACTIVITY_OTHER_USER, currUser);
-                                                                            actObj.put(Configs.ACTIVITY_TEXT, pushMessage);
-                                                                            actObj.saveInBackground();
-                                                                        }}});
-
-
-
-                                                            // UNLIKE RECIPE --------------------------
-                                                            } else if (likesArray.size() > 0) {
-                                                                rObj.increment(Configs.RECIPES_LIKES, -1);
-                                                                rObj.saveInBackground();
-                                                                int likeInt = rObj.getInt(Configs.RECIPES_LIKES);
-                                                                likesTxt.setText(Configs.roundThousandsIntoK(likeInt));
-
-                                                                likesObj = likesArray.get(0);
-                                                                likesObj.deleteInBackground(new DeleteCallback() {
-                                                                    @Override
-                                                                    public void done(ParseException e) {
-                                                                        if (e == null) {
-                                                                            Configs.simpleAlert("You've unliked this recipe", OtherUserProfile.this);
-                                                                        }}});
-                                                            }
-
-
-                                                        // Error in query Likes
-                                                        } else {
-                                                            Configs.simpleAlert(error.getMessage(), OtherUserProfile.this);
-                                                    }}});
-
-
-
-
-                                            // USER IS NOT LOGGED IN/REGISTERED
-                                            } else {
-                                                AlertDialog.Builder alert = new AlertDialog.Builder(OtherUserProfile.this);
-                                                alert.setMessage("You must login/sign up to like a recipe!")
-                                                        .setTitle(R.string.app_name)
-                                                        .setPositiveButton("Login", new DialogInterface.OnClickListener() {
-                                                            @Override
-                                                            public void onClick(DialogInterface dialog, int which) {
-                                                                startActivity(new Intent(OtherUserProfile.this, Login.class));
-                                                            }})
-                                                        .setNegativeButton("Cancel", null)
-                                                        .setIcon(R.drawable.logo);
-                                                alert.create().show();
-                                            }
-
-                                        }}); // end likeButt
+//                                    Button likeButt =  finalCell.findViewById(R.id.crLikeButt);
+//                                    likeButt.setOnClickListener(new View.OnClickListener() {
+//                                        @Override
+//                                        public void onClick(View view) {
+//
+//                                            final ParseUser currUser = ParseUser.getCurrentUser();
+//
+//                                            // USER IS LOGGED IN
+//                                            if (currUser.getUsername() != null) {
+//
+//                                                // Query Likes
+//                                                ParseQuery<ParseObject> query = ParseQuery.getQuery(Configs.LIKES_CLASS_NAME);
+//                                                query.whereEqualTo(Configs.LIKES_LIKED_BY,currUser);
+//                                                query.whereEqualTo(Configs.LIKES_RECIPE_LIKED, rObj);
+//                                                query.findInBackground(new FindCallback<ParseObject>() {
+//                                                    public void done(List<ParseObject> objects, ParseException error) {
+//                                                        if (error == null) {
+//                                                            likesArray = objects;
+//
+//                                                            ParseObject likesObj = new ParseObject(Configs.LIKES_CLASS_NAME);
+//
+//                                                            if (likesArray.size() == 0) {
+//                                                                // LIKE RECIPE -----------
+//                                                                rObj.increment(Configs.RECIPES_LIKES, 1);
+//                                                                rObj.saveInBackground();
+//                                                                int likeInt = rObj.getInt(Configs.RECIPES_LIKES);
+//                                                                likesTxt.setText(Configs.roundThousandsIntoK(likeInt));
+//
+//                                                                likesObj.put(Configs.LIKES_LIKED_BY, currUser);
+//                                                                likesObj.put(Configs.LIKES_RECIPE_LIKED, rObj);
+//                                                                likesObj.saveInBackground(new SaveCallback() {
+//                                                                    @Override
+//                                                                    public void done(ParseException e) {
+//                                                                        if (e == null) {
+//                                                                            Configs.simpleAlert("You've liked this recipe and saved into your Account!", OtherUserProfile.this);
+//
+//                                                                            // Send push notification
+//                                                                            final String pushMessage = currUser.getString(Configs.USER_FULLNAME) + " liked your recipe: " + rObj.getString(Configs.RECIPES_TITLE);
+//
+//                                                                            HashMap<String, Object> params = new HashMap<String, Object>();
+//                                                                            params.put("someKey", userPointer.getObjectId());
+//                                                                            params.put("data", pushMessage);
+//
+//                                                                            ParseCloud.callFunctionInBackground("pushAndroid", params, new FunctionCallback<String>() {
+//                                                                                @Override
+//                                                                                public void done(String object, ParseException e) {
+//                                                                                    if (e == null) {
+//                                                                                        Configs.hidePD();
+//
+//                                                                                        Log.i("log-", "PUSH SENT TO: " + userPointer.getString(Configs.USER_USERNAME)
+//                                                                                                + "\nMESSAGE: "
+//                                                                                                + pushMessage);
+//
+//                                                                                    // Error in Cloud Code
+//                                                                                    } else {
+//                                                                                        Configs.hidePD();
+//                                                                                        Configs.simpleAlert(e.getMessage(), OtherUserProfile.this);
+//                                                                            }}});
+//
+//
+//                                                                            // Save activity
+//                                                                            ParseObject actObj = new ParseObject(Configs.ACTIVITY_CLASS_NAME);
+//                                                                            actObj.put(Configs.ACTIVITY_CURRENT_USER, userPointer);
+//                                                                            actObj.put(Configs.ACTIVITY_OTHER_USER, currUser);
+//                                                                            actObj.put(Configs.ACTIVITY_TEXT, pushMessage);
+//                                                                            actObj.saveInBackground();
+//                                                                        }}});
+//
+//
+//
+//                                                            // UNLIKE RECIPE --------------------------
+//                                                            } else if (likesArray.size() > 0) {
+//                                                                rObj.increment(Configs.RECIPES_LIKES, -1);
+//                                                                rObj.saveInBackground();
+//                                                                int likeInt = rObj.getInt(Configs.RECIPES_LIKES);
+//                                                                likesTxt.setText(Configs.roundThousandsIntoK(likeInt));
+//
+//                                                                likesObj = likesArray.get(0);
+//                                                                likesObj.deleteInBackground(new DeleteCallback() {
+//                                                                    @Override
+//                                                                    public void done(ParseException e) {
+//                                                                        if (e == null) {
+//                                                                            Configs.simpleAlert("You've unliked this recipe", OtherUserProfile.this);
+//                                                                        }}});
+//                                                            }
+//
+//
+//                                                        // Error in query Likes
+//                                                        } else {
+//                                                            Configs.simpleAlert(error.getMessage(), OtherUserProfile.this);
+//                                                    }}});
+//
+//
+//
+//
+//                                            // USER IS NOT LOGGED IN/REGISTERED
+//                                            } else {
+//                                                AlertDialog.Builder alert = new AlertDialog.Builder(OtherUserProfile.this);
+//                                                alert.setMessage("You must login/sign up to like a recipe!")
+//                                                        .setTitle(R.string.app_name)
+//                                                        .setPositiveButton("Login", new DialogInterface.OnClickListener() {
+//                                                            @Override
+//                                                            public void onClick(DialogInterface dialog, int which) {
+//                                                                startActivity(new Intent(OtherUserProfile.this, Login.class));
+//                                                            }})
+//                                                        .setNegativeButton("Cancel", null)
+//                                                        .setIcon(R.drawable.logo);
+//                                                alert.create().show();
+//                                            }
+//
+//                                        }}); // end likeButt
 
 
 

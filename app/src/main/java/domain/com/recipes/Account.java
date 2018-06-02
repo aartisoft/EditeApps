@@ -442,22 +442,22 @@ public class Account extends AppCompatActivity {
                                                     catTxt.setText(recipePointer.getString(Configs.RECIPES_CATEGORY));
 
                                                     // Get Likes
-                                                    final TextView likesTxt = finalCell.findViewById(R.id.crLikesTxt);
-                                                    if (recipePointer.getNumber(Configs.RECIPES_LIKES) != null) {
-                                                        int likes = recipePointer.getInt(Configs.RECIPES_LIKES);
-                                                        likesTxt.setText(Configs.roundThousandsIntoK(likes));
-                                                    } else {
-                                                        likesTxt.setText("0");
-                                                    }
+//                                                    final TextView likesTxt = finalCell.findViewById(R.id.crLikesTxt);
+//                                                    if (recipePointer.getNumber(Configs.RECIPES_LIKES) != null) {
+//                                                        int likes = recipePointer.getInt(Configs.RECIPES_LIKES);
+//                                                        likesTxt.setText(Configs.roundThousandsIntoK(likes));
+//                                                    } else {
+//                                                        likesTxt.setText("0");
+//                                                    }
 
                                                     // Get Comments
-                                                    final TextView commTxt = finalCell.findViewById(R.id.crCommentsTxt);
-                                                    if (recipePointer.getNumber(Configs.RECIPES_COMMENTS) != null) {
-                                                        int comments = recipePointer.getInt(Configs.RECIPES_COMMENTS);
-                                                        commTxt.setText(Configs.roundThousandsIntoK(comments));
-                                                    } else {
-                                                        commTxt.setText("0");
-                                                    }
+//                                                    final TextView commTxt = finalCell.findViewById(R.id.crCommentsTxt);
+//                                                    if (recipePointer.getNumber(Configs.RECIPES_COMMENTS) != null) {
+//                                                        int comments = recipePointer.getInt(Configs.RECIPES_COMMENTS);
+//                                                        commTxt.setText(Configs.roundThousandsIntoK(comments));
+//                                                    } else {
+//                                                        commTxt.setText("0");
+//                                                    }
 
 
                                                     // Get Cover Image
@@ -525,30 +525,30 @@ public class Account extends AppCompatActivity {
 
 
                                                     // MARK: - UNLIKE BUTTON ------------------------------------
-                                                    Button unlikeButt = finalCell.findViewById(R.id.crLikeButt);
-                                                    unlikeButt.setBackgroundResource(R.drawable.liked_butt);
-                                                    unlikeButt.setOnClickListener(new View.OnClickListener() {
-                                                        @Override
-                                                        public void onClick(View view) {
-
-                                                            final ParseUser currUser = ParseUser.getCurrentUser();
-
-                                                            recipePointer.increment(Configs.RECIPES_LIKES, -1);
-                                                            recipePointer.saveInBackground();
-                                                            int likeInt = recipePointer.getInt(Configs.RECIPES_LIKES);
-                                                            likesTxt.setText(Configs.roundThousandsIntoK(likeInt));
-
-                                                            likesObj.deleteInBackground(new DeleteCallback() {
-                                                                @Override
-                                                                public void done(ParseException e) {
-                                                                    if (e == null) {
-                                                                        Configs.simpleAlert("You've unliked this recipe", Account.this);
-                                                                        likedRecipesArray.remove(position);
-                                                                        likedRecipesGridView.invalidateViews();
-                                                                        likedRecipesGridView.refreshDrawableState();
-                                                            }}});
-
-                                                    }});// end unlikeButt
+//                                                    Button unlikeButt = finalCell.findViewById(R.id.crLikeButt);
+//                                                    unlikeButt.setBackgroundResource(R.drawable.liked_butt);
+//                                                    unlikeButt.setOnClickListener(new View.OnClickListener() {
+//                                                        @Override
+//                                                        public void onClick(View view) {
+//
+//                                                            final ParseUser currUser = ParseUser.getCurrentUser();
+//
+//                                                            recipePointer.increment(Configs.RECIPES_LIKES, -1);
+//                                                            recipePointer.saveInBackground();
+//                                                            int likeInt = recipePointer.getInt(Configs.RECIPES_LIKES);
+//                                                            likesTxt.setText(Configs.roundThousandsIntoK(likeInt));
+//
+//                                                            likesObj.deleteInBackground(new DeleteCallback() {
+//                                                                @Override
+//                                                                public void done(ParseException e) {
+//                                                                    if (e == null) {
+//                                                                        Configs.simpleAlert("You've unliked this recipe", Account.this);
+//                                                                        likedRecipesArray.remove(position);
+//                                                                        likedRecipesGridView.invalidateViews();
+//                                                                        likedRecipesGridView.refreshDrawableState();
+//                                                            }}});
+//
+//                                                    }});// end unlikeButt
 
                                             }}});// end userPointer
 
@@ -563,16 +563,16 @@ public class Account extends AppCompatActivity {
                                         catTxt.setText("");
                                         TextView fnTxt =  finalCell.findViewById(R.id.crFullnameTxt);
                                         fnTxt.setText("");
-                                        TextView likesTxt =  finalCell.findViewById(R.id.crLikesTxt);
-                                        likesTxt.setText("N/A");
+//                                        TextView likesTxt =  finalCell.findViewById(R.id.crLikesTxt);
+//                                        likesTxt.setText("N/A");
                                         ImageView coverImg =  finalCell.findViewById(R.id.crRecipeImg);
                                         coverImg.setImageBitmap(null);
                                         coverImg.setBackgroundColor(Color.parseColor("#555555"));
                                         ImageView avatarImg = finalCell.findViewById(R.id.crAvatarImg);
                                         avatarImg.setImageResource(R.drawable.logo);
                                         avatarImg.setEnabled(false);
-                                        Button unlikeButt =  finalCell.findViewById(R.id.crLikeButt);
-                                        unlikeButt.setEnabled(false);
+//                                        Button unlikeButt =  finalCell.findViewById(R.id.crLikeButt);
+//                                        unlikeButt.setEnabled(false);
                                     }
 
 
