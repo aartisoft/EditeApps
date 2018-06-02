@@ -64,7 +64,7 @@ public class AddEditRecipe extends AppCompatActivity {
 
     /* Views */
     TextView topbarTitleTxt;
-    EditText titleTxt, storyTxt, cookingTxt, bakingTxt, restingTxt, youtubeTxt, videoTitleTxt, ingredientsTxt, preparationTxt;
+    EditText titleTxt, storyTxt, cookingTxt, bakingTxt, restingTxt, youtubeTxt, videoTitleTxt, ingredientsTxt, preparationTxt , price;
     ImageView coverImage;
     ListView categoriesListView;
     Button easyButt, mediumButt, hardButt, deleteButt;
@@ -106,7 +106,7 @@ public class AddEditRecipe extends AppCompatActivity {
         ingredientsTxt = findViewById(R.id.aerIngredientsTxt);
         preparationTxt = findViewById(R.id.aerPreparationTxt);
         categoriesListView = findViewById(R.id.aerCategoriesListView);
-
+        price = findViewById(R.id.etprice);
         easyButt = findViewById(R.id.aerEasyButt);
         mediumButt = findViewById(R.id.aerMediumButt);
         hardButt = findViewById(R.id.aerHardButt);
@@ -237,14 +237,16 @@ public class AddEditRecipe extends AppCompatActivity {
               // YOU MUST FILL THE FIELDS TO SUBMIT THE RECIPE ----------------
               if (    titleTxt.getText().toString().matches("") ||
                       selectedCategory.matches("") ||
-                      storyTxt.getText().toString().matches("") ||
-                      difficultyStr.matches("") ||
+//                      storyTxt.getText().toString().matches("") ||
+//                      difficultyStr.matches("") ||
                       cookingTxt.getText().toString().matches("") ||
-                      bakingTxt.getText().toString().matches("") ||
+                     bakingTxt.getText().toString().matches("") ||
                       restingTxt.getText().toString().matches("") ||
                       ingredientsTxt.getText().toString().matches("") ||
-                      preparationTxt.getText().toString().matches("") ||
+//                      preparationTxt.getText().toString().matches("") ||
                       coverImage.getDrawable() == null
+                      ||
+                      price.getText().toString().matches("")
                   ) {
                     Configs.simpleAlert("You must fill the fields and add a cover image!", AddEditRecipe.this);
 
@@ -286,7 +288,7 @@ public class AddEditRecipe extends AppCompatActivity {
                   recipeObj.put(Configs.RECIPES_INGREDIENTS, ingredientsTxt.getText().toString());
                   recipeObj.put(Configs.RECIPES_PREPARATION, preparationTxt.getText().toString());
                   recipeObj.put(Configs.RECIPES_IS_REPORTED, false);
-                  // recipeObj.put(Configs.RECIPES_price, "15");
+                   recipeObj.put(Configs.RECIPES_price, price.getText().toString());
                   // Save image
                   Bitmap bitmap = ((BitmapDrawable) coverImage.getDrawable()).getBitmap();
                   ByteArrayOutputStream stream = new ByteArrayOutputStream();
