@@ -30,7 +30,7 @@
             android:background="@drawable/home_butt"
             android:backgroundTint="#000"
             android:paddingTop="25dp"
-            android:text="Recipes"
+            android:text="Menu"
             android:textAllCaps="false"
             android:textColor="#000"
             android:textSize="10dp"/>
@@ -90,43 +90,42 @@
 
         <Button
             android:id="@+id/hSearchButt"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBaseline="@+id/hRefreshButt"
+            android:layout_alignBottom="@+id/hRefreshButt"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/search_butt"/>
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/search_butt" />
 
         <Button
             android:id="@+id/hRefreshButt"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_alignBaseline="@+id/hSearchButt"
-            android:layout_alignBottom="@+id/hSearchButt"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_toStartOf="@+id/hSearchButt"
-            android:background="@drawable/refresh_butt"/>
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="22dp"
+            android:background="@drawable/refresh_butt" />
 
         <TextView
             android:id="@+id/hTitleTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:gravity="center_vertical"
-            android:text="RECIPES"
-            android:textColor="#333"
-            android:layout_alignParentBottom="true"/>
+            android:text="Name of Restaurant"
+            android:textColor="#333"/>
 
-        <Button
-            android:id="@+id/hFilterButt"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/filter_butt"/>
+        <!--<Button-->
+            <!--android:id="@+id/hFilterButt"-->
+            <!--android:layout_width="44dp"-->
+            <!--android:layout_height="44dp"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:background="@drawable/filter_butt"/>-->
     </RelativeLayout>
 
 
