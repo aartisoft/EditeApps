@@ -142,14 +142,14 @@ public class Home extends AppCompatActivity {
 
 
         // Init TabBar buttons
-        Button tab_one = findViewById(R.id.tab_two);
+//        Button tab_one = findViewById(R.id.tab_two);
         Button tab_two = findViewById(R.id.tab_three);
 
-        tab_one.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Home.this, Shopping.class));
-        }});
+//        tab_one.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(Home.this, Shopping.class));
+//        }});
 
         tab_two.setOnClickListener(new View.OnClickListener() {
             @Override
