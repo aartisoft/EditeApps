@@ -138,7 +138,7 @@
         android:layout_above="@+id/admobBanner"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/relativeLayout"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="51dp"
         android:layout_marginTop="8dp"/>
 
     <LinearLayout

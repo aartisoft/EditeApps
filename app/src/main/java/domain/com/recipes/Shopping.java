@@ -33,20 +33,18 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
+
 import android.widget.ListView;
-import android.widget.RadioButton;
+
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.parse.ParseObject;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static android.R.id.list;
+
 
 public class Shopping extends AppCompatActivity {
 
