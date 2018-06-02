@@ -115,7 +115,7 @@
                     android:textColor="#fff"
                     android:textSize="12sp"
                     android:textStyle="bold"/>
-
+<!--
                 <Button
                     android:id="@+id/facebookButt"
                     android:layout_width="260dp"
@@ -151,7 +151,7 @@
                     android:textColor="#555"
                     android:textSize="11sp"
                     android:textStyle="normal|bold"/>
-
+-->
             </RelativeLayout>
 
         </LinearLayout>
