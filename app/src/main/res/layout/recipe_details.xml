@@ -218,7 +218,8 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="15dp"
-                        android:visibility="visible">
+                        android:visibility="visible"
+                        tools:ignore="WebViewLayout">
 
                     </WebView>
 
@@ -256,14 +257,33 @@
                         android:layout_below="@+id/rdCategoryTxt"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp">
-
+                        
+                        <TextView
+                            android:id="@+id/Price"
+                            android:textStyle="bold"
+                            android:layout_marginRight="60dp"
+                            android:text="Price :"
+                            android:textSize="20sp"
+                            android:layout_width="70dp"
+                            android:layout_height="44dp" />
+                        <TextView
+                            android:id="@+id/priceNumber"
+                            android:text="115"
+                            android:textStyle="bold"
+                            android:layout_alignTop="@+id/rdLikeButt"
+                            android:layout_marginLeft="90dp"
+                            android:textSize="20sp"
+                            android:layout_width="70dp"
+                            android:layout_height="44dp" />
                         <Button
+                            android:visibility="gone"
                             android:id="@+id/rdLikeButt"
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:background="@drawable/like_butt" />
 
                         <Button
+                            android:visibility="gone"
                             android:id="@+id/rdCommentButt"
                             android:layout_width="44dp"
                             android:layout_height="44dp"
@@ -273,6 +293,7 @@
                             android:background="@drawable/comment_butt" />
 
                         <TextView
+                            android:visibility="gone"
                             android:id="@+id/rdLikesTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -284,6 +305,7 @@
                             android:textSize="9sp" />
 
                         <TextView
+                            android:visibility="gone"
                             android:id="@+id/rdCommentsTxt"
                             android:layout_width="44dp"
                             android:layout_height="wrap_content"

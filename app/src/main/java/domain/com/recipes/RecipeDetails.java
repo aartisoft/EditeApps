@@ -60,7 +60,7 @@ public class RecipeDetails extends AppCompatActivity {
 
     TextView titleTxt, recipeTitleTxt, categoryTxt, likesTxt, userFullNameTxt, aboutReceipeTxt,
             difficultyTxt, cookingTxt, bakingTxt, restingTxt, ingredientsTxt,
-    preparationTxt, videoTitleTxt, commentsTxt;
+    preparationTxt, videoTitleTxt, commentsTxt,Price,priceNumber;
 
     WebView videoWebView;
 
@@ -110,6 +110,8 @@ public class RecipeDetails extends AppCompatActivity {
         videoTitleTxt = findViewById(R.id.rdVideoTitleTxt);
         preparationTxt = findViewById(R.id.rdPreparationTxt);
         ingredientsTxt = findViewById(R.id.rdIngredientsTxt);
+        Price = findViewById(R.id.Price);
+        priceNumber = findViewById(R.id.priceNumber);
 
         videoWebView = (WebView) findViewById(R.id.rdVideoWebView);
         videoWebView.getSettings().setJavaScriptEnabled(true);
