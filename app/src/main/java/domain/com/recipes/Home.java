@@ -9,6 +9,7 @@ package domain.com.recipes;
 
 -----------------------------------*/
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,6 +17,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +26,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.BaseAdapter;
@@ -249,7 +252,15 @@ public class Home extends AppCompatActivity {
 
     // MARK: - QUERY RECIPES ------------------------------------------------------------------
     void queryRecipes(String searchText) {
-        Configs.showPD("Please wait...", Home.this);
+        //Configs.showPD("Please wait...", Home.this);
+
+        final Dialog dialog = new Dialog(this);
+        dialog.getWindow().setBackgroundDrawable(
+                new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.pd);
+        dialog.show();
+
 
         ParseQuery<ParseObject> query= ParseQuery.getQuery(Configs.RECIPES_CLASS_NAME);
 
@@ -261,18 +272,20 @@ public class Home extends AppCompatActivity {
             query.whereContainedIn(Configs.RECIPES_KEYWORDS, keywords);
         }
 
-        if (!Configs.categoryStr.matches("") ) { query.whereEqualTo(Configs.RECIPES_CATEGORY, Configs.categoryStr); }
+        if (!Configs.categoryStr.matches("") ) {
+            query.whereEqualTo(Configs.RECIPES_CATEGORY, Configs.categoryStr);
+
+        }
 
         query.whereEqualTo(Configs.RECIPES_IS_REPORTED, false);
 
         Log.i("log-", "SEARCH TEXT: " + searchText);
-
         query.orderByDescending(Configs.RECIPES_CREATED_AT);
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException error) {
                 if (error == null) {
                     recipesArray = objects;
-                    Configs.hidePD();
+                  dialog.dismiss();
 
 
                     // CUSTOM GRID ADAPTER
@@ -531,7 +544,7 @@ public class Home extends AppCompatActivity {
 
                 // error in query
                 } else {
-                    Configs.hidePD();
+                    dialog.dismiss();
                     Configs.simpleAlert(error.getMessage(), Home.this);
         }}});
 

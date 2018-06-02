@@ -10,13 +10,16 @@ package domain.com.recipes;
 -----------------------------------*/
 
 import android.app.Application;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 
 import com.parse.Parse;
@@ -158,20 +161,16 @@ public class Configs extends Application {
 
 
     // MARK: - CUSTOM PROGRESS DIALOG -----------
-    public static AlertDialog pd;
+    public static  Dialog dialog ;
     public static void showPD(String mess, Context ctx) {
-        AlertDialog.Builder db = new AlertDialog.Builder(ctx);
-        LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        assert inflater != null;
-        View dialogView = inflater.inflate(R.layout.pd, null);
-        TextView messTxt = dialogView.findViewById(R.id.pdMessTxt);
-        messTxt.setText(mess);
-        db.setView(dialogView);
-        db.setCancelable(true);
-        pd = db.create();
-        pd.show();
+        dialog = new Dialog(ctx);
+        dialog.getWindow().setBackgroundDrawable(
+                new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.pd);
+        dialog.show();
     }
-    public static void hidePD(){ pd.dismiss(); }
+    public static void hidePD(){ dialog.dismiss(); }
 
 
 

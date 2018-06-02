@@ -33,7 +33,7 @@ public class SplashScreen extends AppCompatActivity {
 
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreen.this, Home.class);
+                Intent i = new Intent(SplashScreen.this, Categories.class);
                 startActivity(i);
                 this.finish();
             }
