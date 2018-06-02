@@ -130,7 +130,7 @@ public class Home extends AppCompatActivity {
 
         // Init views
         TextView titleTxt = findViewById(R.id.hTitleTxt);
-        titleTxt.setTypeface(Configs.typeWriter);
+       titleTxt.setTypeface(Configs.typeWriter);
         searchTxt = findViewById(R.id.hSearchTxt);
         searchLayout = (LinearLayout)findViewById(R.id.hSearchLayout);
 
@@ -142,14 +142,14 @@ public class Home extends AppCompatActivity {
 
 
         // Init TabBar buttons
-//        Button tab_one = findViewById(R.id.tab_two);
+      Button tab_one = findViewById(R.id.tab_one);
         Button tab_two = findViewById(R.id.tab_three);
 
-//        tab_one.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(Home.this, Shopping.class));
-//        }});
+       tab_one.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+                startActivity(new Intent(Home.this, Categories.class));
+        }});
 
         tab_two.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,12 +186,12 @@ public class Home extends AppCompatActivity {
 
 
         // MARK: - CHOOSE CATEGORIES BUTTON ------------------------------------
-        Button chooseCatButt = findViewById(R.id.hFilterButt);
-        chooseCatButt.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-              startActivity(new Intent(Home.this, Categories.class));
-        }});
+//        Button chooseCatButt = findViewById(R.id.hFilterButt);
+//        chooseCatButt.setOnClickListener(new View.OnClickListener() {
+//          @Override
+//          public void onClick(View view) {
+//              startActivity(new Intent(Home.this, Categories.class));
+//        }});
 
 
 

@@ -111,7 +111,7 @@ public class Account extends AppCompatActivity {
         tab_one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Account.this, Home.class));
+                startActivity(new Intent(Account.this, Categories.class));
             }});
 
 //        tab_two.setOnClickListener(new View.OnClickListener() {
