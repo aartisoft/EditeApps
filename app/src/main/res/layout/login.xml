@@ -40,7 +40,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="40dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/logo"/>
+                    android:src="@drawable/logooo"/>
 
                 <TextView
                     android:id="@+id/loginTitleTxt"

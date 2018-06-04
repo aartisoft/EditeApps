@@ -133,7 +133,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/logo"
+            android:src="@drawable/roro"
             ads:civ_border_color="#fff"
             ads:civ_border_width="2dp"/>
 

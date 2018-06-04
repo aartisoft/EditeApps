@@ -26,7 +26,7 @@
             android:layout_height="30dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/logo"/>
+            android:src="@drawable/roro"/>
 
         <TextView
             android:id="@+id/crFullnameTxt"
@@ -54,7 +54,7 @@
             android:layout_below="@+id/crAvatarImg"
             android:layout_marginTop="5dp"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/logo"/>
+            app:srcCompat="@drawable/roro"/>
 
         <TextView
             android:id="@+id/crRecipeTitletxt"
