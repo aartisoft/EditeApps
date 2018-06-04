@@ -106,7 +106,8 @@ public class Account extends AppCompatActivity {
 
         // Init TabBar buttons
         Button tab_one = findViewById(R.id.tab_one);
-//        Button tab_two = findViewById(R.id.tab_two);
+       Button tab_two = findViewById(R.id.tab_two);
+       Button tab_three = findViewById(R.id.tab_three);
 
         tab_one.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,12 +115,16 @@ public class Account extends AppCompatActivity {
                 startActivity(new Intent(Account.this, Categories.class));
             }});
 
-//        tab_two.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(Account.this, Shopping.class));
-//            }});
-
+        tab_two.setOnClickListener(new View.OnClickListener() {
+        @Override
+           public void onClick(View v) {
+            startActivity(new Intent(Account.this, AboutUs.class));
+           }});
+        tab_three.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Account.this, Account.class));
+            }});
 
 
 
