@@ -7,10 +7,10 @@
     tools:context=".SplashScreen">
 
     <ImageView
-        android:src="@drawable/launch_screen"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scaleType="centerCrop"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/logooo" />
 
     <ProgressBar
         android:id="@+id/progressBar1"
@@ -19,6 +19,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="58dp"
-        android:indeterminateTint="#FF4081"/>
+        android:indeterminateTint="#FF4081" />
 
 </RelativeLayout>

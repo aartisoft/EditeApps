@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="domain.com.recipes">
+    package="domain.com.recipes">
 
     <!-- permissions -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-feature android:name="android.hardware.camera"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <!-- For Push Notifications -->
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-
-
     <!-- IMPORTANT: Replace "domain.com.recipes" with your own app's package name! -->
-    <permission android:name="domain.com.recipes.permission.C2D_MESSAGE"  android:protectionLevel="signature"/>
+    <permission
+        android:name="domain.com.recipes.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
 
-    <uses-permission android:name="domain.com.recipes.permission.C2D_MESSAGE"/>
-
-
+    <uses-permission android:name="domain.com.recipes.permission.C2D_MESSAGE" />
 
     <application
         android:name=".Configs"
@@ -36,7 +36,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
 
-
         <!-- Splash screen -->
         <activity
             android:name=".SplashScreen"
@@ -45,12 +44,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/Splashscreen">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
 
         <!-- file provider -->
         <provider
@@ -63,70 +61,54 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-
-
-
         <!-- IMPORTANT: Replace "478517440140" with your own GCM Sender Id! -->
         <meta-data
             android:name="com.parse.push.gcm_sender_id"
-            android:value="id:478517440140"/>
+            android:value="id:478517440140" />
 
-
-
-
-        <service android:name="com.parse.PushService"/>
-
+        <service android:name="com.parse.PushService" />
 
         <!-- For Facebook SDK -->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
+            android:value="@string/facebook_app_id" />
 
         <receiver
             android:name="com.parse.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
-
-
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
                 <!-- IMPORTANT: Replace "domain.com.recipes" with your own app's package name! -->
-                <category android:name="domain.com.recipes"/>
-
-
-
-
+                <category android:name="domain.com.recipes" />
             </intent-filter>
         </receiver>
         <receiver
             android:name="com.parse.ParsePushBroadcastReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.parse.push.intent.RECEIVE"/>
-                <action android:name="com.parse.push.intent.OPEN"/>
-                <action android:name="com.parse.push.intent.DELETE"/>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+                <action android:name="com.parse.push.intent.DELETE" />
             </intent-filter>
         </receiver>
 
-
-
-
         <!-- Other Activites -->
-        <activity android:name=".Home"/>
-        <activity android:name=".RecipeDetails"/>
-        <activity android:name=".Login"/>
-        <activity android:name=".SignUp"/>
-        <activity android:name=".OtherUserProfile"/>
-        <activity android:name=".Categories"/>
-        <activity android:name=".Shopping"/>
-        <activity android:name=".Account"/>
-        <activity android:name=".ActivityScreen"/>
-        <activity android:name=".EditProfile"/>
-        <activity android:name=".AddEditRecipe"/>
-        <activity android:name=".Comments"/>
-        <activity android:name=".TermsOfuse"></activity>
-
+        <activity android:name=".Home" />
+        <activity android:name=".RecipeDetails" />
+        <activity android:name=".Login" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".OtherUserProfile" />
+        <activity android:name=".Categories" />
+        <activity android:name=".Shopping" />
+        <activity android:name=".Account" />
+        <activity android:name=".ActivityScreen" />
+        <activity android:name=".EditProfile" />
+        <activity android:name=".AddEditRecipe" />
+        <activity android:name=".Comments" />
+        <activity android:name=".TermsOfuse" />
+        <activity android:name=".AboutUs"></activity>
     </application>
 
 </manifest>

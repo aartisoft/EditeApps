@@ -143,21 +143,27 @@ public class Home extends AppCompatActivity {
 
         // Init TabBar buttons
       Button tab_one = findViewById(R.id.tab_one);
-        Button tab_two = findViewById(R.id.tab_three);
+        Button tab_three = findViewById(R.id.tab_three);
+        Button tab_two = findViewById(R.id.tab_two);
 
-       tab_one.setOnClickListener(new View.OnClickListener() {
+
+        tab_one.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
                 startActivity(new Intent(Home.this, Categories.class));
         }});
 
-        tab_two.setOnClickListener(new View.OnClickListener() {
+        tab_three.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home.this, Account.class));
         }});
 
-
+        tab_two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this, AboutUs.class));
+            }});
 
         // Call query for ALL recipes
         queryRecipes("");
