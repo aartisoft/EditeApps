@@ -80,8 +80,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/rdRecipeLayout"
@@ -95,7 +94,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="160dp"
-                    app:srcCompat="@drawable/mini_logo" />
+                    app:srcCompat="@drawable/mini_logo"/>
 
                 <RelativeLayout
                     android:id="@+id/rdRecipeLayoutWhite"
@@ -107,6 +106,7 @@
                     android:background="#fff">
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdDifficultyTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -117,10 +117,10 @@
                         android:layout_marginTop="20dp"
                         android:text="Difficulty: "
                         android:textColor="#333"
-                        android:textSize="11sp"
-                        android:visibility="gone" />
+                        android:textSize="11sp"/>
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdVideoTitleTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -131,10 +131,10 @@
                         android:layout_marginTop="10dp"
                         android:maxLines="2"
                         android:text="loading..."
-                        android:textSize="12sp"
-                        android:visibility="gone" />
+                        android:textSize="12sp"/>
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdSeparator"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -147,10 +147,10 @@
                         android:singleLine="true"
                         android:text="•••••••••••••••••••••••••••••••••••••••••••••••••••••••••"
                         android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:visibility="gone" />
+                        android:textSize="12sp" />
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdSep7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -163,10 +163,10 @@
                         android:singleLine="true"
                         android:text="•••••••••••••••••••••••••••••••••••••••••••••••••••••••••"
                         android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:visibility="gone" />
+                        android:textSize="12sp"/>
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdUserFullNameTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -178,10 +178,10 @@
                         android:text="Made by: "
                         android:textColor="#333"
                         android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:visibility="gone" />
+                        android:textStyle="bold"/>
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdSep2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -194,8 +194,7 @@
                         android:singleLine="true"
                         android:text="•••••••••••••••••••••••••••••••••••••••••••••••••••••••••"
                         android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:visibility="gone" />
+                        android:textSize="12sp"/>
 
                     <ImageView
                         android:id="@+id/rdNoVideoImg"
@@ -208,7 +207,7 @@
                         android:layout_x="0dp"
                         android:layout_y="-13dp"
                         android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/no_video" />
+                        app:srcCompat="@drawable/no_video"/>
 
                     <WebView
                         android:id="@+id/rdVideoWebView"
@@ -226,6 +225,7 @@
 
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdAboutRecipeTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -236,8 +236,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="15dp"
                         android:text="loading..."
-                        android:textSize="12sp"
-                        android:visibility="gone" />
+                        android:textSize="12sp"/>
 
                     <TextView
                         android:id="@+id/rdCategoryTxt"
@@ -249,7 +248,7 @@
                         android:layout_marginTop="15dp"
                         android:text="loading..."
                         android:textAlignment="center"
-                        android:textSize="11sp" />
+                        android:textSize="11sp"/>
 
                     <RelativeLayout
                         android:id="@+id/rdButtonsLayout"
@@ -258,44 +257,43 @@
                         android:layout_below="@+id/rdCategoryTxt"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp">
-
+                        
                         <TextView
                             android:id="@+id/Price"
-                            android:layout_width="70dp"
-                            android:layout_height="44dp"
+                            android:textStyle="bold"
                             android:layout_marginRight="60dp"
                             android:text="Price :"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
-
+                            android:layout_width="70dp"
+                            android:layout_height="44dp" />
                         <TextView
                             android:id="@+id/priceNumber"
-                            android:layout_width="70dp"
-                            android:layout_height="44dp"
+                            android:text="115"
+                            android:textStyle="bold"
                             android:layout_alignTop="@+id/rdLikeButt"
                             android:layout_marginLeft="90dp"
-                            android:text="115"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
-
+                            android:layout_width="70dp"
+                            android:layout_height="44dp" />
                         <Button
+                            android:visibility="gone"
                             android:id="@+id/rdLikeButt"
                             android:layout_width="44dp"
                             android:layout_height="44dp"
-                            android:background="@drawable/like_butt"
-                            android:visibility="gone" />
+                            android:background="@drawable/like_butt" />
 
                         <Button
+                            android:visibility="gone"
                             android:id="@+id/rdCommentButt"
                             android:layout_width="44dp"
                             android:layout_height="44dp"
                             android:layout_alignTop="@+id/rdLikeButt"
                             android:layout_marginLeft="20dp"
                             android:layout_toEndOf="@+id/rdLikeButt"
-                            android:background="@drawable/comment_butt"
-                            android:visibility="gone" />
+                            android:background="@drawable/comment_butt" />
 
                         <TextView
+                            android:visibility="gone"
                             android:id="@+id/rdLikesTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -304,10 +302,10 @@
                             android:layout_below="@+id/rdLikeButt"
                             android:text="•••"
                             android:textAlignment="center"
-                            android:textSize="9sp"
-                            android:visibility="gone" />
+                            android:textSize="9sp" />
 
                         <TextView
+                            android:visibility="gone"
                             android:id="@+id/rdCommentsTxt"
                             android:layout_width="44dp"
                             android:layout_height="wrap_content"
@@ -315,8 +313,7 @@
                             android:layout_below="@+id/rdCommentButt"
                             android:text="•••"
                             android:textAlignment="center"
-                            android:textSize="9sp"
-                            android:visibility="gone" />
+                            android:textSize="9sp" />
 
                     </RelativeLayout>
 
@@ -333,9 +330,10 @@
                         android:text="loading..."
                         android:textAlignment="center"
                         android:textColor="#333"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                        android:visibility="gone"
                         android:id="@+id/crAvatarImg"
                         android:layout_width="44dp"
                         android:layout_height="44dp"
@@ -343,8 +341,7 @@
                         android:layout_below="@+id/rdSeparator"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
-                        android:src="@drawable/logo"
-                        android:visibility="gone" />
+                        android:src="@drawable/logo"/>
 
                     <RelativeLayout
                         android:id="@+id/relativeLayout3"
@@ -377,7 +374,7 @@
                                 android:textAlignment="center"
                                 android:textColor="#333"
                                 android:textSize="10sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"/>
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -404,7 +401,7 @@
                                 android:textAlignment="center"
                                 android:textColor="#333"
                                 android:textSize="10sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"/>
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -432,12 +429,13 @@
                                 android:textAlignment="center"
                                 android:textColor="#333"
                                 android:textSize="10sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"/>
                         </RelativeLayout>
 
                     </RelativeLayout>
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/rdSep6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -450,8 +448,7 @@
                         android:singleLine="true"
                         android:text="•••••••••••••••••••••••••••••••••••••••••••••••••••••••••"
                         android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:visibility="gone" />
+                        android:textSize="12sp"/>
 
                     <TextView
                         android:id="@+id/textView12"
@@ -465,7 +462,7 @@
                         android:text="Ingredients"
                         android:textColor="#333"
                         android:textSize="12sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:id="@+id/rdIngredientsTxt"
@@ -477,9 +474,10 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="12dp"
                         android:text="loading..."
-                        android:textSize="12sp" />
+                        android:textSize="12sp"/>
 
                     <Button
+                        android:visibility="gone"
                         android:id="@+id/rdAddToShoppingButt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -493,11 +491,11 @@
                         android:textAllCaps="false"
                         android:textColor="#fff"
                         android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:visibility="gone" />
+                        android:textStyle="bold"/>
 
                     <TextView
 
+                        android:visibility="gone"
                         android:id="@+id/rdSep3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -510,12 +508,12 @@
                         android:singleLine="true"
                         android:text="•••••••••••••••••••••••••••••••••••••••••••••••••••••••••"
                         android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:visibility="gone" />
+                        android:textSize="12sp"/>
 
                     <TextView
-                        android:id="@+id/textView14"
+                        android:visibility="gone"
 
+                        android:id="@+id/textView14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/rdSep7"
@@ -525,12 +523,12 @@
                         android:text="Preparation"
                         android:textColor="#333"
                         android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:visibility="gone" />
+                        android:textStyle="bold"/>
 
                     <TextView
-                        android:id="@+id/rdPreparationTxt"
+                        android:visibility="gone"
 
+                        android:id="@+id/rdPreparationTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/textView14"
@@ -539,9 +537,8 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="10dp"
                         android:text="loading..."
-                        android:textSize="12sp"
-                        android:visibility="gone" />
-                    -->
+                        android:textSize="12sp"/>
+-->
 
                 </RelativeLayout>
 

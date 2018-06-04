@@ -108,7 +108,7 @@ public class Configs extends Application {
     public static String  RECIPES_PREPARATION = "preparation";
     public static String  RECIPES_USER_POINTER = "userPointer";
     public static String  RECIPES_IS_REPORTED = "isReported";
-    //public static String  RECIPES_price = "price";
+    public static String  RECIPES_price = "price";
     public static String  RECIPES_REPORT_MESSAGE = "reportMessage";
     public static String  RECIPES_KEYWORDS = "keywords";
     public static String  RECIPES_CREATED_AT = "createdAt";
