@@ -93,7 +93,7 @@
             android:layout_alignStart="@+id/crRecipeTitletxt"
             android:layout_below="@+id/crCategoryTxt"
             android:layout_marginTop="8dp"
-            android:textColor="#800000"
+            android:textColor="#a8a8a8"
             android:maxLines="1"
             android:singleLine="true"
             android:text="153"

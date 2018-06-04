@@ -15,6 +15,7 @@
         android:layout_height="64dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:elevation="8dp"
         android:background="#fff">
 
         <Button
@@ -46,7 +47,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:gravity="center_vertical"
-            android:text="RECIPE"
+            android:text="Piccadilly"
             android:textColor="#333"
             android:layout_alignParentBottom="true"/>
 
@@ -68,7 +69,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/relativeLayout"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/roro"/>
+        app:srcCompat="@drawable/logo"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -94,6 +95,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="160dp"
+                    android:elevation="8dp"
                     app:srcCompat="@drawable/mini_logo"/>
 
                 <RelativeLayout
@@ -103,6 +105,8 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/imageView2"
+                    android:paddingBottom="30dp"
+                    android:elevation="8dp"
                     android:background="#fff">
 
                     <TextView
@@ -248,33 +252,66 @@
                         android:layout_marginTop="15dp"
                         android:text="loading..."
                         android:textAlignment="center"
-                        android:textSize="11sp"/>
+                        android:textSize="13sp"/>
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:id="@+id/rdButtonsLayout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/rdCategoryTxt"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp">
-                        
+                        android:layout_marginTop="13dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:id="@+id/Price"
-                            android:textStyle="bold"
-                            android:layout_marginRight="60dp"
-                            android:text="Price :"
-                            android:textSize="20sp"
                             android:layout_width="70dp"
-                            android:layout_height="44dp" />
+                            android:layout_height="44dp"
+                            android:text="Price   :"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#a8a8a8"
+                            />
+
                         <TextView
                             android:id="@+id/priceNumber"
-                            android:text="115"
-                            android:textStyle="bold"
-                            android:layout_alignTop="@+id/rdLikeButt"
-                            android:layout_marginLeft="90dp"
-                            android:textSize="20sp"
                             android:layout_width="70dp"
-                            android:layout_height="44dp" />
+                            android:layout_height="44dp"
+                            android:text="115"
+                            android:textColor="#a8a8a8"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@id/rdButtonsLayout"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Ingredients"
+                        android:textColor="#333"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/rdIngredientsTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/rdSep6"
+                        android:layout_below="@+id/textView12"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="12dp"
+                        android:text="loading..."
+                        android:textSize="13sp"/>
+
                         <Button
                             android:visibility="gone"
                             android:id="@+id/rdLikeButt"
@@ -315,7 +352,7 @@
                             android:textAlignment="center"
                             android:textSize="9sp" />
 
-                    </RelativeLayout>
+
 
                     <TextView
                         android:id="@+id/rdRecipeTitleTxt"
@@ -330,6 +367,7 @@
                         android:text="loading..."
                         android:textAlignment="center"
                         android:textColor="#333"
+                        android:textSize="18sp"
                         android:textStyle="bold"/>
 
                     <de.hdodenhof.circleimageview.CircleImageView
@@ -341,14 +379,14 @@
                         android:layout_below="@+id/rdSeparator"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
-                        android:src="@drawable/roro"/>
+                        android:src="@drawable/logo"/>
 
                     <RelativeLayout
                         android:id="@+id/relativeLayout3"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_alignParentStart="true"
-                        android:layout_below="@+id/rdSep2"
+                        android:layout_below="@+id/rdIngredientsTxt"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="13dp">
@@ -450,31 +488,7 @@
                         android:textAlignment="center"
                         android:textSize="12sp"/>
 
-                    <TextView
-                        android:id="@+id/textView12"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_below="@id/rdSep6"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="20dp"
-                        android:text="Ingredients"
-                        android:textColor="#333"
-                        android:textSize="12sp"
-                        android:textStyle="bold"/>
 
-                    <TextView
-                        android:id="@+id/rdIngredientsTxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignEnd="@+id/rdSep6"
-                        android:layout_below="@+id/textView12"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="12dp"
-                        android:text="loading..."
-                        android:textSize="12sp"/>
 
                     <Button
                         android:visibility="gone"
