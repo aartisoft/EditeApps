@@ -27,7 +27,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:gravity="center_vertical"
-            android:text="ADD RECIPE"
+            android:text="Piccadilly"
             android:textColor="#333"/>
 
         <Button
@@ -282,7 +282,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_marginLeft="10dp"
                         android:layout_toEndOf="@+id/textView19"
-                        android:text="RESTING"
+                        android:text="SERVING"
                         android:textAlignment="center"
                         android:textColor="#333"
                         android:textSize="12sp"

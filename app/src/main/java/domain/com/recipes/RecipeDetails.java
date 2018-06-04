@@ -250,7 +250,7 @@ public class RecipeDetails extends AppCompatActivity {
 
                     cookingTxt.setText("Cooking:\n" + recipeObj.getString(Configs.RECIPES_COOKING));
                     bakingTxt.setText("Baking:\n" + recipeObj.getString(Configs.RECIPES_BAKING));
-                    restingTxt.setText("Resting:\n" + recipeObj.getString(Configs.RECIPES_RESTING));
+                    restingTxt.setText("Serving:\n" + recipeObj.getString(Configs.RECIPES_RESTING));
 
 
                     // Get Recipe video
@@ -258,6 +258,7 @@ public class RecipeDetails extends AppCompatActivity {
                         if (!recipeObj.getString(Configs.RECIPES_YOUTUBE).matches("") ) {
                             String youtubeLink = recipeObj.getString(Configs.RECIPES_YOUTUBE);
                             final String videoId = youtubeLink.replace("https://youtu.be/", "");
+
                             String embedHTML = "<iframe width='300' height='160' src='https://www.youtube.com/embed/" + videoId + "?rel=0&amp;controls=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>";
                             videoWebView.loadData(embedHTML, "text/html", null);
 

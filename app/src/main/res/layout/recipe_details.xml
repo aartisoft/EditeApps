@@ -47,7 +47,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:gravity="center_vertical"
-            android:text="RECIPE"
+            android:text="Piccadilly"
             android:textColor="#333"
             android:layout_alignParentBottom="true"/>
 
