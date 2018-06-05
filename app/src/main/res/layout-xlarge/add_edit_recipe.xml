@@ -28,12 +28,13 @@
             android:layout_centerHorizontal="true"
             android:gravity="center_vertical"
             android:text="Piccadilly"
+            android:textSize="30sp"
             android:textColor="#333"/>
 
         <Button
             android:id="@+id/aerBackButt"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="10dp"
@@ -80,7 +81,7 @@
                     android:layout_marginTop="10dp"
                     android:text="CATEGORY"
                     android:textColor="#333"
-                    android:textSize="12sp"
+                    android:textSize="27sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -92,7 +93,7 @@
                     android:layout_marginTop="10dp"
                     android:text="TITLE"
                     android:textColor="#333"
-                    android:textSize="12sp"
+                    android:textSize="27sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -103,7 +104,7 @@
                     android:layout_below="@+id/aerTitleTxt"
                     android:text="••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••"
                     android:textAlignment="center"
-                    android:textSize="12sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/textView13"
@@ -112,13 +113,13 @@
                     android:layout_alignStart="@+id/textView11"
                     android:layout_below="@+id/textView11"
                     android:text="Select below:"
-                    android:textSize="10sp"
+                    android:textSize="20sp"
                     android:textStyle="italic" />
 
                 <EditText
                     android:id="@+id/aerTitleTxt"
                     android:layout_width="match_parent"
-                    android:layout_height="34dp"
+                    android:layout_height="wrap_content"
                     android:layout_alignStart="@+id/textView9"
                     android:layout_below="@+id/textView9"
                     android:ems="10"
@@ -130,12 +131,12 @@
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
                     android:singleLine="true"
-                    android:textSize="11sp" />
+                    android:textSize="21sp" />
 
                 <ListView
                     android:id="@+id/aerCategoriesListView"
                     android:layout_width="match_parent"
-                    android:layout_height="365dp"
+                    android:layout_height="575dp"
                     android:layout_alignStart="@+id/textView13"
                     android:layout_below="@+id/textView13"
                     android:layout_marginRight="10dp"
@@ -254,7 +255,7 @@
 
                 <RelativeLayout
                     android:id="@+id/relativeLayout2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/linearLayout"
@@ -264,20 +265,20 @@
 
                     <TextView
                         android:id="@+id/textView19"
-                        android:layout_width="60dp"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_toEndOf="@+id/aerCookingTxt"
+                        android:layout_marginStart="14dp"
+                        android:layout_toEndOf="@+id/textView20"
                         android:text="BAKING"
                         android:textAlignment="center"
                         android:textColor="#333"
-                        android:textSize="12sp"
+                        android:textSize="22sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/textView21"
-                        android:layout_width="60dp"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_marginLeft="10dp"
@@ -285,13 +286,13 @@
                         android:text="SERVING"
                         android:textAlignment="center"
                         android:textColor="#333"
-                        android:textSize="12sp"
+                        android:textSize="22sp"
                         android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/aerCookingTxt"
-                        android:layout_width="60dp"
-                        android:layout_height="34dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/textView20"
                         android:layout_marginTop="5dp"
@@ -300,23 +301,22 @@
                         android:imeOptions="actionNext"
                         android:inputType="textPersonName"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/textView20"
-                        android:layout_width="match_parent"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignEnd="@+id/aerCookingTxt"
                         android:text="COOKING"
                         android:textAlignment="center"
                         android:textColor="#333"
-                        android:textSize="12sp"
+                        android:textSize="22sp"
                         android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/aerBakingTxt"
-                        android:layout_width="60dp"
-                        android:layout_height="34dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignBaseline="@+id/aerCookingTxt"
                         android:layout_alignBottom="@+id/aerCookingTxt"
                         android:layout_alignStart="@+id/textView19"
@@ -325,12 +325,12 @@
                         android:imeOptions="actionNext"
                         android:inputType="textPersonName"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/aerRestingTxt"
-                        android:layout_width="60dp"
-                        android:layout_height="34dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignBaseline="@+id/aerBakingTxt"
                         android:layout_alignBottom="@+id/aerBakingTxt"
                         android:layout_alignStart="@+id/textView21"
@@ -339,7 +339,7 @@
                         android:imeOptions="actionNext"
                         android:inputType="textPersonName"
                         android:textAlignment="center"
-                        android:textSize="10sp" />
+                        android:textSize="20sp" />
 
                 </RelativeLayout>
 
@@ -364,13 +364,13 @@
                     android:layout_below="@+id/textView22"
                     android:text="YOUTUBE RECIPE VIDEO LINK (optional)"
                     android:textColor="#333"
-                    android:textSize="12sp"
+                    android:textSize="27sp"
                     android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/aerYoutubeTxt"
                     android:layout_width="match_parent"
-                    android:layout_height="34dp"
+                    android:layout_height="wrap_content"
                     android:layout_alignStart="@+id/textView23"
                     android:layout_below="@+id/textView23"
                     android:layout_marginRight="10dp"
@@ -382,16 +382,14 @@
                     android:inputType="text"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
-                    android:textSize="11sp" />
+                    android:textSize="21sp" />
 
                 <EditText
                     android:id="@+id/aerVideoTitleTxt"
                     android:layout_width="match_parent"
-                    android:layout_height="34dp"
-                    android:layout_alignStart="@+id/textView23"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/aerYoutubeTxt"
                     android:layout_below="@+id/aerYoutubeTxt"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="5dp"
                     android:ems="10"
                     android:fontFamily="sans-serif-condensed"
                     android:hint="type a short title for your video"
@@ -399,7 +397,7 @@
                     android:inputType="text"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
-                    android:textSize="11sp" />
+                    android:textSize="21sp" />
 
                 <TextView
                     android:id="@+id/textView24"
@@ -422,7 +420,7 @@
                     android:layout_below="@+id/textView24"
                     android:text="INGREDIENTS"
                     android:textColor="#333"
-                    android:textSize="12sp"
+                    android:textSize="27sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -432,7 +430,7 @@
                     android:layout_alignStart="@+id/textView25"
                     android:layout_below="@+id/textView25"
                     android:text="Separate each ingredient by hitting Return"
-                    android:textSize="9sp"
+                    android:textSize="19sp"
                     android:textStyle="italic" />
 
                 <EditText
@@ -447,7 +445,7 @@
                     android:hint="type here..."
                     android:inputType="textMultiLine"
                     android:paddingBottom="20dp"
-                    android:textSize="11sp" />
+                    android:textSize="21sp" />
 
                 <TextView
                     android:id="@+id/textView27"
@@ -525,7 +523,7 @@
                     android:layout_below="@+id/textView30"
                     android:text="COVER IMAGE"
                     android:textColor="#333"
-                    android:textSize="12sp"
+                    android:textSize="27sp"
                     android:textStyle="bold" />
 
                 <ImageView
@@ -562,7 +560,7 @@
                     android:layout_weight="1"
                     android:text="••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••"
                     android:textAlignment="center"
-                    android:textSize="12sp"
+                    android:textSize="22sp"
                     android:visibility="visible" />
 
                 <TextView
@@ -573,12 +571,12 @@
                     android:layout_below="@+id/txtprice"
                     android:text="PRICE"
                     android:textColor="#333"
-                    android:textSize="12sp"
+                    android:textSize="27sp"
                     android:textStyle="bold"/>
                 <EditText
                     android:id="@+id/etprice"
                     android:layout_width="match_parent"
-                    android:layout_height="34dp"
+                    android:layout_height="wrap_content"
                     android:layout_alignStart="@+id/textView23"
                     android:layout_below="@+id/txtprice2"
                     android:layout_marginRight="10dp"
@@ -591,12 +589,12 @@
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
                     android:textColor="#800000"
-                    android:textSize="11sp" />
+                    android:textSize="21sp" />
 
                 <Button
                     android:id="@+id/aerSubmitButt"
                     android:layout_width="260dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_below="@+id/etprice"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="20dp"
@@ -604,7 +602,7 @@
                     android:backgroundTint="@color/yellow_color"
                     android:text="Submit your Recipe!"
                     android:textAllCaps="false"
-                    android:textSize="12sp" />
+                    android:textSize="24sp" />
 
             </RelativeLayout>
         </LinearLayout>

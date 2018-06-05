@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "domain.com.recipes"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -12,6 +12,7 @@ android {
 
         // Enabling multidex support.
         multiDexEnabled true
+
 
     }
 
@@ -29,6 +30,7 @@ android {
 
 
 dependencies {
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.squareup.okhttp3:okhttp:+'
     //noinspection GradleCompatible
@@ -41,6 +43,8 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     implementation 'com.google.firebase:firebase-core:15.0.2'
     implementation 'com.google.firebase:firebase-messaging:15.0.2'
+    implementation 'com.android.support:multidex:1.0.1'
+
 
 }
 

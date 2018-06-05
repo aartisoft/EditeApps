@@ -37,7 +37,7 @@
             android:lineSpacingExtra="24sp"
             android:text="SELECT A CATEGORY"
             android:textColor="#333"
-            android:textSize="18sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
     </RelativeLayout>

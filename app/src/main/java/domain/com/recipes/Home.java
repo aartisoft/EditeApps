@@ -15,6 +15,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
@@ -26,6 +27,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -37,6 +39,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.DeleteCallback;
 import com.parse.FindCallback;
@@ -62,7 +65,7 @@ public class Home extends AppCompatActivity {
     /* Views */
     LinearLayout searchLayout;
     EditText searchTxt;
-
+int Width = 150;
 
     /* Variables */
     List<ParseObject>recipesArray;
@@ -329,6 +332,9 @@ public class Home extends AppCompatActivity {
 
                                     TextView Price = finalCell.findViewById(R.id.crCategoryPrice);
                                     Price.setText(rObj.getString(Configs.RECIPES_price));
+
+
+
                                     // Get Likes
 //                                    final TextView likesTxt = finalCell.findViewById(R.id.crLikesTxt);
 //                                    if (rObj.getNumber(Configs.RECIPES_LIKES) != null) {
@@ -540,8 +546,14 @@ public class Home extends AppCompatActivity {
                     GridView aGrid =  findViewById(R.id.hRecipesGridView);
                     aGrid.setAdapter(new GridAdapter(Home.this, recipesArray));
 
+                    if ((getResources().getConfiguration().screenLayout &
+                            Configuration.SCREENLAYOUT_SIZE_MASK) ==
+                            Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+                        // on a large screen device ...
+                        Width = 250 ;
+                    }
                     // Set number of Columns accordingly to the device used
-                    float scalefactor = getResources().getDisplayMetrics().density * 150; // 150 is the cell's width
+                    float scalefactor = getResources().getDisplayMetrics().density * Width; // 150 is the cell's width
                     int number = getWindowManager().getDefaultDisplay().getWidth();
                     int columns = (int) ((float) number / (float) scalefactor);
                     aGrid.setNumColumns(columns);

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/cmrRecipeImg"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/roro"/>
+
+    <TextView
+        android:id="@+id/cmrRecNameTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cmrRecipeImg"
+        android:layout_alignTop="@+id/cmrRecipeImg"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="48dp"
+        android:layout_toEndOf="@+id/cmrRecipeImg"
+        android:gravity="center_vertical"
+        android:text="loading..."
+
+        android:layout_centerVertical="true"
+        android:textColor="#333"
+        android:textSize="30dp"/>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/cmrRecNameTxt"
+        android:layout_marginTop="49dp"
+        app:srcCompat="@drawable/discolure_indicator" />
+</RelativeLayout>

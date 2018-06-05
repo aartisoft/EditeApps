@@ -12,7 +12,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="?attr/actionBarSize"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="#fff">
@@ -23,7 +23,7 @@
             android:layout_height="44dp"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="10dp"
+            android:layout_centerVertical="true"
             android:background="@drawable/report_butt"/>
 
         <TextView
@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:text="Piccadilly"
             android:textColor="#333"
@@ -43,7 +44,7 @@
             android:layout_height="44dp"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="10dp"
+            android:layout_centerVertical="true"
             android:background="@drawable/back_butt"/>
     </RelativeLayout>
 

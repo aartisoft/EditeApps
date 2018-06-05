@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/RelativeLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:id="@+id/crBkgLayout"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:elevation="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/rounded_corner">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/crAvatarImg"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/roro"/>
+
+        <TextView
+            android:id="@+id/crFullnameTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/crAvatarImg"
+            android:layout_alignTop="@+id/crAvatarImg"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="8dp"
+            android:layout_toEndOf="@+id/crAvatarImg"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="loading..."
+            android:textColor="#333"
+            android:textSize="21sp"/>
+
+        <ImageView
+            android:id="@+id/crRecipeImg"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/crAvatarImg"
+            android:layout_marginTop="5dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/roro"/>
+
+        <TextView
+            android:id="@+id/crRecipeTitletxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/crFullnameTxt"
+            android:layout_alignStart="@+id/crAvatarImg"
+            android:layout_below="@+id/crRecipeImg"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="loading..."
+            android:textColor="#333"
+            android:textSize="21sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/crCategoryTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/crRecipeTitletxt"
+            android:layout_alignStart="@+id/crRecipeTitletxt"
+            android:layout_below="@+id/crRecipeTitletxt"
+            android:layout_marginTop="8dp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="loading..."
+            android:textSize="19sp"/>
+
+        <TextView
+            android:id="@+id/crCategoryPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/crRecipeTitletxt"
+            android:layout_alignStart="@+id/crRecipeTitletxt"
+            android:layout_below="@+id/crCategoryTxt"
+            android:layout_marginTop="8dp"
+            android:textColor="#a8a8a8"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="153"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
