@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
-    tools:context=".EditProfile">
+    tools:context=".EditProfile"
+    android:layoutDirection="ltr">
 
     <!-- TOP BAR -->
     <RelativeLayout

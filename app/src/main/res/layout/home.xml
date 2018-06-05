@@ -8,7 +8,8 @@
     android:layout_height="match_parent"
     android:background="@color/com_facebook_button_login_silver_background_color"
     android:focusableInTouchMode="true"
-    tools:context=".Home">
+    tools:context=".Home"
+    android:layoutDirection="ltr">
 
 
     <!-- TAB BAR -->

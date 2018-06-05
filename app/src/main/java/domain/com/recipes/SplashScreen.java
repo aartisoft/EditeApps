@@ -12,7 +12,7 @@ package domain.com.recipes;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
-import android.support.multidex.MultiDex;
+//import android.support.multidex.MultiDex;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
