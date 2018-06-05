@@ -128,7 +128,6 @@
         android:id="@+id/oupRecipesGridView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/admobBanner"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imageView"
         android:layout_marginBottom="8dp"/>

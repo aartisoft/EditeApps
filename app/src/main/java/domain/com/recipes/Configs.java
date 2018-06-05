@@ -180,7 +180,7 @@ public class Configs extends Application {
         alert.setMessage(mess)
                 .setTitle(R.string.app_name)
                 .setPositiveButton("OK", null)
-                .setIcon(R.drawable.logo);
+                .setIcon(R.drawable.logooo);
         alert.create().show();
     }
 

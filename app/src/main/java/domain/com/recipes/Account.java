@@ -17,12 +17,14 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -32,6 +34,7 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.parse.DeleteCallback;
@@ -87,7 +90,12 @@ public class Account extends AppCompatActivity {
             queryMyRecipes();
             showUserDetails();
         }
+
+
+
     }
+
+
 
 
 
@@ -177,13 +185,12 @@ public class Account extends AppCompatActivity {
 
 
         // MARK: - ACTIVITY BUTTON ------------------------------------
-        Button actButt = findViewById(R.id.accActivityButty);
-        actButt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Account.this, ActivityScreen.class));
-        }});
-
+//        Button actButt = findViewById(R.id.accActivityButty);
+//        actButt.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(Account.this, ActivityScreen.class));
+//        }});
 
 
 

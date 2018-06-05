@@ -25,6 +25,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -53,7 +54,7 @@ import java.util.List;
 
 public class RecipeDetails extends AppCompatActivity {
 
-
+    int Width , Hight ;
     /* Views */
     ImageView coverImage, avatarImg;
     RelativeLayout recipeLayout;
@@ -259,7 +260,7 @@ public class RecipeDetails extends AppCompatActivity {
                             String youtubeLink = recipeObj.getString(Configs.RECIPES_YOUTUBE);
                             final String videoId = youtubeLink.replace("https://youtu.be/", "");
 
-                            String embedHTML = "<iframe width='300' height='160' src='https://www.youtube.com/embed/" + videoId + "?rel=0&amp;controls=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>";
+                            String embedHTML = "<iframe width='"+ Width +"' height='"+(Width-150)+"' src='https://www.youtube.com/embed/" + videoId + "?rel=0&amp;controls=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>";
                             videoWebView.loadData(embedHTML, "text/html", null);
 
                         // Hide videoWebView in case of no video
@@ -513,6 +514,24 @@ public class RecipeDetails extends AppCompatActivity {
         return Uri.parse(path);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        final WebView layout = (WebView) findViewById(R.id.rdVideoWebView);
 
+        ViewTreeObserver viewTreeObserver = layout.getViewTreeObserver();
+        if (viewTreeObserver.isAlive()) {
+            viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    layout.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+
+                    Width = layout.getWidth();
+
+                    Hight = layout.getHeight();
+                }
+            });
+        }
+    }
 
 }// @end
