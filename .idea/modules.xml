@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EditeApps.iml" filepath="$PROJECT_DIR$/EditeApps.iml" />
       <module fileurl="file://D:\apk\Customer Projects\Customer\old\Recipes\EditeApps.iml" filepath="D:\apk\Customer Projects\Customer\old\Recipes\EditeApps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Recipes.iml" filepath="$PROJECT_DIR$/Recipes.iml" />
       <module fileurl="file://E:\RUSSIAN\project\EditeApps\Recipes.iml" filepath="E:\RUSSIAN\project\EditeApps\Recipes.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
