@@ -19,16 +19,12 @@
         android:id="@+id/caActivityTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/caAvatarImg"
         android:layout_alignTop="@+id/caAvatarImg"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="50dp"
         android:layout_toEndOf="@+id/caAvatarImg"
         android:fontFamily="sans-serif-condensed"
         android:text="loading..."
         android:textColor="#333"
-        android:textSize="11sp"/>
+        android:textSize="11sp" />
 
     <TextView
         android:id="@+id/caDateTxt"

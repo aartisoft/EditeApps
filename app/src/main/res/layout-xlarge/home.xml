@@ -100,6 +100,7 @@
 
         <Button
             android:id="@+id/hRefreshButt"
+            android:visibility="gone"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"

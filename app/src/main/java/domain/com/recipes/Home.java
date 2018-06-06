@@ -130,48 +130,46 @@ int Width = 150;
         getSupportActionBar().hide();
 
 
-
         // Init views
         TextView titleTxt = findViewById(R.id.hTitleTxt);
-       titleTxt.setTypeface(Configs.typeWriter);
+        titleTxt.setTypeface(Configs.typeWriter);
         searchTxt = findViewById(R.id.hSearchTxt);
-        searchLayout = (LinearLayout)findViewById(R.id.hSearchLayout);
-
+        searchLayout = (LinearLayout) findViewById(R.id.hSearchLayout);
 
 
         // Hide searchLayout
         hideSearchLayout();
 
 
-
         // Init TabBar buttons
-      Button tab_one = findViewById(R.id.tab_one);
+        Button tab_one = findViewById(R.id.tab_one);
         Button tab_three = findViewById(R.id.tab_three);
         Button tab_two = findViewById(R.id.tab_two);
 
 
         tab_one.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
+            @Override
+            public void onClick(View v) {
                 startActivity(new Intent(Home.this, Categories.class));
-        }});
+            }
+        });
 
         tab_three.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home.this, Account.class));
-        }});
+            }
+        });
 
         tab_two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home.this, Shopping.class));
-            }});
+            }
+        });
 
         // Call query for ALL recipes
         queryRecipes("");
-
-
 
 
         // MARK: - SEARCH RECIPES BY KEYWORDS --------------------------------------------------
@@ -188,10 +186,8 @@ int Width = 150;
                     return true;
                 }
                 return false;
-        }});
-
-
-
+            }
+        });
 
 
         // MARK: - CHOOSE CATEGORIES BUTTON ------------------------------------
@@ -203,16 +199,29 @@ int Width = 150;
 //        }});
 
 
-
-
         // MARK: - SEARCH BUTTON ------------------------------------
         Button sButt = findViewById(R.id.hSearchButt);
         sButt.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) { showSearchLayout();  }});
-
-
-
+            @Override
+            public void onClick(View view) {
+                showSearchLayout();
+            }
+        });
+        int screenLayout = this.getResources().getConfiguration().screenLayout;
+        screenLayout &= Configuration.SCREENLAYOUT_SIZE_MASK;
+        //Determine screen size
+        if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE) {
+            Toast.makeText(Home.this, "Large screen", Toast.LENGTH_LONG).show();
+        }
+        else if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_NORMAL) {
+            Toast.makeText(Home.this, "Normal sized screen", Toast.LENGTH_LONG).show();
+        }
+        else if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_SMALL) {
+            Toast.makeText(Home.this, "Small sized screen", Toast.LENGTH_LONG).show();
+        }
+        else {
+            Toast.makeText(Home.this, "Screen size is neither large, normal or small", Toast.LENGTH_LONG).show();
+        }
 
         // MARK: - CANCEL SEARCH BUTTON ------------------------------------
         Button csButt = findViewById(R.id.hCancelButt);
@@ -550,13 +559,13 @@ int Width = 150;
                             Configuration.SCREENLAYOUT_SIZE_MASK) ==
                             Configuration.SCREENLAYOUT_SIZE_XLARGE) {
                         // on a large screen device ...
-                        Width = 340 ;
+                        Width = 400 ;
                     }
                     // Set number of Columns accordingly to the device used
-                    float scalefactor = getResources().getDisplayMetrics().density * Width; // 150 is the cell's width
-                    int number = getWindowManager().getDefaultDisplay().getWidth();
-                    int columns = (int) ((float) number / (float) scalefactor);
-                    aGrid.setNumColumns(columns);
+//                    float scalefactor = getResources().getDisplayMetrics().density * Width; // 150 is the cell's width
+//                    int number = getWindowManager().getDefaultDisplay().getWidth();
+//                    int columns = (int) ((float) number / (float) scalefactor);
+                    aGrid.setNumColumns(2);
 
 
 
