@@ -210,18 +210,7 @@ int Width = 150;
         int screenLayout = this.getResources().getConfiguration().screenLayout;
         screenLayout &= Configuration.SCREENLAYOUT_SIZE_MASK;
         //Determine screen size
-        if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE) {
-            Toast.makeText(Home.this, "Large screen", Toast.LENGTH_LONG).show();
-        }
-        else if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_NORMAL) {
-            Toast.makeText(Home.this, "Normal sized screen", Toast.LENGTH_LONG).show();
-        }
-        else if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_SMALL) {
-            Toast.makeText(Home.this, "Small sized screen", Toast.LENGTH_LONG).show();
-        }
-        else {
-            Toast.makeText(Home.this, "Screen size is neither large, normal or small", Toast.LENGTH_LONG).show();
-        }
+       
 
         // MARK: - CANCEL SEARCH BUTTON ------------------------------------
         Button csButt = findViewById(R.id.hCancelButt);
