@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/splash_screen"
     android:layout_width="match_parent"
-    android:background="@color/dark_white"
+    android:background="@android:color/white"
     android:layout_height="match_parent"
     tools:context=".SplashScreen"
     android:layoutDirection="ltr">
@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
+        android:scaleType="centerInside"
         android:src="@drawable/logooo" />
 
     <ProgressBar

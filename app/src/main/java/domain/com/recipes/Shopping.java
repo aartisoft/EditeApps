@@ -93,7 +93,7 @@ public class Shopping extends AppCompatActivity {
         tab_one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Shopping.this, Home.class));
+                startActivity(new Intent(Shopping.this, Categories.class));
         }});
 
         tab_two.setOnClickListener(new View.OnClickListener() {
