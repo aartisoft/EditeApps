@@ -48,7 +48,7 @@
             android:text="Shopping"
             android:textAllCaps="false"
             android:textColor="#000"
-            android:textSize="19dp"/>
+            android:textSize="18dp"/>
 
         <Button
             android:id="@+id/tab_three"
