@@ -288,12 +288,12 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="60dp"
-            android:background="@drawable/aboutus"
+            android:background="@drawable/shopping_butt"
             android:backgroundTint="#555"
             android:paddingTop="25dp"
-            android:text="About Us"
+            android:text="Shopping"
             android:textAllCaps="false"
-            android:textColor="#555"
+            android:textColor="#000"
             android:textSize="10dp"/>
 
         <Button
