@@ -137,7 +137,7 @@
                 <ListView
                     android:id="@+id/aerCategoriesListView"
                     android:layout_width="match_parent"
-                    android:layout_height="575dp"
+                    android:layout_height="900dp"
                     android:layout_alignStart="@+id/textView13"
                     android:layout_below="@+id/textView13"
                     android:layout_marginRight="10dp"
