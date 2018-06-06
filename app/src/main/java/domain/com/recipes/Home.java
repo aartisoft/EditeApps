@@ -165,7 +165,7 @@ int Width = 150;
         tab_two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Home.this, AboutUs.class));
+                startActivity(new Intent(Home.this, Shopping.class));
             }});
 
         // Call query for ALL recipes
