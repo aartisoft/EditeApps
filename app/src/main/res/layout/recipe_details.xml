@@ -97,7 +97,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="160dp"
                     android:elevation="8dp"
-                    app:srcCompat="@drawable/mini_logo"/>
+                    app:srcCompat="@drawable/logooo"/>
 
                 <RelativeLayout
                     android:id="@+id/rdRecipeLayoutWhite"
