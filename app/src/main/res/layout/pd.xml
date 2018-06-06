@@ -46,7 +46,7 @@
             android:layout_below="@+id/progressBar"
             android:layout_centerHorizontal="true"
             android:gravity="center|left"
-            android:text="Plz Wait ..."
+            android:text=" please Wait "
             android:textAlignment="center"
             android:textColor="#333"
 
