@@ -73,10 +73,11 @@ public class Shopping extends AppCompatActivity {
 
 
         // Make an array of ingredients (to be shown in the shoppingListView)
-        String[] one = Configs.shoppingString.split("\\r?\\n");;
+        String[] one = Configs.shoppingString.split("\\r?\\n");
         ingredientsArray = new ArrayList<String>();
         ingredientsArray.addAll(Arrays.asList(one));
         ingredientsArray.remove(0);
+
         // Log.i("log-", "INGREDIENTS ARRAY: " + ingredientsArray);
         setupShoppingListView();
 
@@ -193,7 +194,8 @@ public class Shopping extends AppCompatActivity {
 
         // Init ListView and set its adapter
         shoppingListView =  findViewById(R.id.shopShoppingListView);
-        shoppingListView.setAdapter(new ListAdapter(Shopping.this, ingredientsArray));
+        final ListAdapter adapter = new ListAdapter(Shopping.this, ingredientsArray);
+        shoppingListView.setAdapter(adapter);
 
 
         // LONG PRESS -> DELETE AN ITEM -----------------------------------------
@@ -202,13 +204,23 @@ public class Shopping extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int position, long l) {
 
                 ingredientsArray.remove(position);
+                adapter.notifyDataSetChanged();
+                shoppingListView.deferNotifyDataSetChanged();
                 shoppingListView.invalidateViews();
                 shoppingListView.refreshDrawableState();
 
+
+                prefs.edit().putString("shoppingString", "").apply();
+                for (int i = 0 ; i < ingredientsArray.size(); i++) {
+                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Shopping.this);
+                    Configs.shoppingString = prefs.getString("shoppingString", "");
+                    Configs.shoppingString = Configs.shoppingString + "\n" + ingredientsArray.get(i);
+                    prefs.edit().putString("shoppingString", Configs.shoppingString).apply();
+
+                }
            return true;
         }});
     }
-
 
 
 
