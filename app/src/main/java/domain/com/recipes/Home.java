@@ -550,7 +550,7 @@ int Width = 150;
                             Configuration.SCREENLAYOUT_SIZE_MASK) ==
                             Configuration.SCREENLAYOUT_SIZE_XLARGE) {
                         // on a large screen device ...
-                        Width = 250 ;
+                        Width = 340 ;
                     }
                     // Set number of Columns accordingly to the device used
                     float scalefactor = getResources().getDisplayMetrics().density * Width; // 150 is the cell's width
