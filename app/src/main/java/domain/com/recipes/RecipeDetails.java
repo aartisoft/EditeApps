@@ -295,7 +295,7 @@ public class RecipeDetails extends AppCompatActivity {
                           SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(RecipeDetails.this);
                           Configs.shoppingString = prefs.getString("shoppingString", "");
 
-                          Configs.shoppingString = Configs.shoppingString + "\n" + titleTxt.getText().toString();
+                          Configs.shoppingString = Configs.shoppingString + "\n" + recipeTitleTxt.getText().toString();
 
                           prefs.edit().putString("shoppingString", Configs.shoppingString).apply();
                           Log.i("log-", "SHOPPING STRING: \n" + Configs.shoppingString);
