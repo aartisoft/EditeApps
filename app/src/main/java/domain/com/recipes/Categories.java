@@ -102,7 +102,14 @@ public class Categories extends AppCompatActivity {
                 if (imageName.matches("burger jumbo")){
                     imageName = "burger_jumbo";
                 }
-
+                if (imageName.matches("milk shake")){
+                    imageName = "milk_shake";
+                }
+                if (imageName.matches("mix shake")){
+                    imageName = "mix_shake";
+                }  if (imageName.matches("ice cream")){
+                    imageName = "ice_cream";
+                }
 
                 int resID = getResources().getIdentifier(imageName , "drawable", getPackageName());
                 catImg.setImageResource(resID);

@@ -55,6 +55,13 @@ public class Configs extends Application {
             "Pizza",
             "Burger Jumbo",
             "Crepe",
+            "Cocktails",
+            "Milk Shake",
+            "Mix Shake",
+            "Ice cream",
+            "Frappe",
+            "Juices",
+
 
             // You can add categories here...
             // IMPORTANT: Also remember to add the proper images into the 'drawable'  folder.
