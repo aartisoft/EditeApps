@@ -210,7 +210,7 @@ int Width = 150;
         int screenLayout = this.getResources().getConfiguration().screenLayout;
         screenLayout &= Configuration.SCREENLAYOUT_SIZE_MASK;
         //Determine screen size
-       
+
 
         // MARK: - CANCEL SEARCH BUTTON ------------------------------------
         Button csButt = findViewById(R.id.hCancelButt);
