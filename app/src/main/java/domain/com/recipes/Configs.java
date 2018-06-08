@@ -61,6 +61,7 @@ public class Configs extends Application {
             "Ice cream",
             "Frappe",
             "Juices",
+            "Hot Drinks",
 
 
             // You can add categories here...

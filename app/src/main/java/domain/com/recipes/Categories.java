@@ -109,6 +109,8 @@ public class Categories extends AppCompatActivity {
                     imageName = "mix_shake";
                 }  if (imageName.matches("ice cream")){
                     imageName = "ice_cream";
+                }if (imageName.matches("hot drinks")){
+                    imageName = "hot_drinks";
                 }
 
                 int resID = getResources().getIdentifier(imageName , "drawable", getPackageName());

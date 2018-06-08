@@ -136,12 +136,12 @@
                 <ListView
                     android:id="@+id/aerCategoriesListView"
                     android:layout_width="match_parent"
-                    android:layout_height="600dp"
+                    android:layout_height="650dp"
                     android:layout_alignStart="@+id/textView13"
                     android:layout_below="@+id/textView13"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/rounded_corner_yellow"
+                    android:background="@color/gray"
                     android:divider="#888"
                     android:dividerHeight="1dp"
                     android:listSelector="@color/dark_white" />
@@ -537,7 +537,7 @@
                     android:layout_below="@+id/textView31"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:background="@color/yellow_color"
+                    android:background="@color/gray"
                     android:scaleType="centerCrop" />
 
 
@@ -602,7 +602,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="20dp"
-                    android:backgroundTint="@color/yellow_color"
+                    android:backgroundTint="@color/gray"
                     android:text="Submit your Recipe!"
                     android:textAllCaps="false"
                     android:textSize="12sp" />

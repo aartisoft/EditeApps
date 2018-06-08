@@ -260,7 +260,7 @@ public class RecipeDetails extends AppCompatActivity {
                             String youtubeLink = recipeObj.getString(Configs.RECIPES_YOUTUBE);
                             final String videoId = youtubeLink.replace("https://youtu.be/", "");
 
-                            String embedHTML = "<iframe width='420'+ Width  height='200' src='https://www.youtube.com/embed/" + videoId + "?rel=0&amp;controls=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>";
+                            String embedHTML = "<iframe width='42-0'+ Width  height='200' src='https://www.youtube.com/embed/" + videoId + "?rel=0&amp;controls=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>";
                             videoWebView.loadData(embedHTML, "text/html", null);
 
                         // Hide videoWebView in case of no video
