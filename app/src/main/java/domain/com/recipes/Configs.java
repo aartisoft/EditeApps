@@ -45,6 +45,7 @@ public class Configs extends Application {
     // FOOD CATEGORIES ARRAY (editable)
     public static String[] categoriesArray = new String[] {
             "Hot Drinks",
+            "Shisha",
             "Sandwich",
             "Fahita",
             "Soup",
