@@ -75,7 +75,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:background="#fff170"
+            android:background="@color/gray_color"
             android:orientation="vertical">
 
             <TextView
