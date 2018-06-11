@@ -286,10 +286,25 @@
             android:textSize="10dp"/>
 
         <Button
+            android:id="@+id/Order"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="60dp"
+            android:background="@drawable/shopping_butt"
+            android:backgroundTint="#555"
+            android:paddingTop="25dp"
+            android:text="Orders"
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:textSize="10dp"/>
+
+        <Button
             android:id="@+id/tab_two"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
+            android:visibility="gone"
             android:layout_marginLeft="60dp"
             android:background="@drawable/shopping_butt"
             android:backgroundTint="#555"
@@ -312,6 +327,8 @@
             android:textAllCaps="false"
             android:textColor="#000"
             android:textSize="10dp"/>
+
+
     </LinearLayout>
 
 </RelativeLayout>

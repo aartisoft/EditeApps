@@ -1,27 +1,39 @@
 {
   "project_info": {
-    "project_number": "478517440140",
-    "firebase_url": "https://bizzy-aa883.firebaseio.com",
-    "project_id": "bizzy-aa883",
-    "storage_bucket": "bizzy-aa883.appspot.com"
+    "project_number": "1023836168412",
+    "firebase_url": "https://piccadlly-6a28d.firebaseio.com",
+    "project_id": "piccadlly-6a28d",
+    "storage_bucket": "piccadlly-6a28d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:478517440140:android:38efd6d74f06cb83",
+        "mobilesdk_app_id": "1:1023836168412:android:2a839ea889c09d82",
         "android_client_info": {
           "package_name": "domain.com.recipes"
         }
       },
       "oauth_client": [
         {
-          "client_id": "478517440140-si80u7ujd0sm91fpfkard5eu94q5tvjp.apps.googleusercontent.com",
+          "client_id": "1023836168412-ctkjfogkle0n4fvkgd0asqb7i08agqmf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "domain.com.recipes",
+            "certificate_hash": "65e5aae573f22313709f4745a95094e337013e37"
+          }
+        },
+        {
+          "client_id": "1023836168412-rj8esfgarc8pt1pvpfsia3r8c7h405it.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1023836168412-rj8esfgarc8pt1pvpfsia3r8c7h405it.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAvdfI8011kJcKMmB-VD8E-bHi8lGHa99A"
+          "current_key": "AIzaSyDGrP5oF41p_HRjdKIYTyM7q76MJ5qIxG0"
         }
       ],
       "services": {
@@ -29,8 +41,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1023836168412-rj8esfgarc8pt1pvpfsia3r8c7h405it.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

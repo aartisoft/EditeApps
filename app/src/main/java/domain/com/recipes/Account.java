@@ -116,6 +116,8 @@ public class Account extends AppCompatActivity {
         Button tab_one = findViewById(R.id.tab_one);
        Button tab_two = findViewById(R.id.tab_two);
        Button tab_three = findViewById(R.id.tab_three);
+       Button Orders = findViewById(R.id.Order);
+
 
         tab_one.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,8 +135,13 @@ public class Account extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(Account.this, Account.class));
             }});
+        Orders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-
+                startActivity(new Intent(Account.this, Order.class));
+            }
+        });
 
         // Init views
         noUserLayout = (RelativeLayout)findViewById(R.id.accNoUserLayout);
