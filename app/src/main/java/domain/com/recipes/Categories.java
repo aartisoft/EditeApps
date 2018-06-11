@@ -56,6 +56,16 @@ public class Categories extends AppCompatActivity {
               Intent intent =new Intent(Categories.this ,Home.class);
               startActivity(intent);
           }});
+        //OFFLINE ---------- mode
+        Button offline = findViewById(R.id.offButton);
+        offline.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent b =new Intent(Categories.this,Offline.class);
+                startActivity(b);
+            }
+        });
 
 
     }// end onCreate()

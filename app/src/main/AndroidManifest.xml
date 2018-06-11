@@ -111,7 +111,8 @@
         <activity android:name=".TermsOfuse" />
         <activity android:name=".AboutUs" />
         <activity android:name=".Order" />
-        <activity android:name=".Orderdetails"></activity>
+        <activity android:name=".Orderdetails" />
+        <activity android:name=".Offline"></activity>
     </application>
 
 </manifest>
