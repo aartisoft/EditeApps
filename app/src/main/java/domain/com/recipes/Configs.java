@@ -12,6 +12,8 @@ package domain.com.recipes;
 import android.app.Application;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
@@ -51,18 +53,18 @@ public class Configs extends Application {
             "Main Dish",
             "Fahita",
             "Pizza",
-            "Burger Jumbo",
+
+            "Hot Drinks",
+            "Shisha",
             "Sandwich",
             "Desserts",
             "Crepe",
-            "Hot Drinks",
             "Cocktails",
+            "Milk Shake",
+            "Mix Shake",
             "Ice cream",
             "Frappe",
             "Juices",
-            "Milk Shake",
-            "Mix Shake",
-            "Shisha",
 
 
 
@@ -193,6 +195,7 @@ public class Configs extends Application {
                 .setIcon(R.drawable.logooo);
         alert.create().show();
     }
+
 
 
 

@@ -19,6 +19,8 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -128,6 +130,15 @@ int Width = 150;
 
         // Hide ActionBar
         getSupportActionBar().hide();
+
+        //In case of having no INTERNET Connection
+
+        if(isConnectingToInternet(Home.this)){
+
+
+        }else {
+            Toast.makeText(this, "There is no internet connection :(", Toast.LENGTH_SHORT).show();
+        }
 
 
         // Init views
@@ -415,6 +426,7 @@ int Width = 150;
 
 
 
+
                                     // MARK: - LIKE BUTTON ------------------------------------
 //                                    Button likeButt =  finalCell.findViewById(R.id.crLikeButt);
 //                                    likeButt.setOnClickListener(new View.OnClickListener() {
@@ -592,6 +604,23 @@ int Width = 150;
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         assert imm != null;
         imm.hideSoftInputFromWindow(searchTxt.getWindowToken(), 0);
+    }
+
+    public static boolean isConnectingToInternet(Context context)    {
+        ConnectivityManager connectivity =
+                (ConnectivityManager) context.getSystemService(
+                        Context.CONNECTIVITY_SERVICE);
+        if (connectivity != null)
+        {
+            NetworkInfo[] info = connectivity.getAllNetworkInfo();
+            if (info != null)
+                for (int i = 0; i < info.length; i++)
+                    if (info[i].getState() == NetworkInfo.State.CONNECTED)
+                    {
+                        return true;
+                    }
+        }
+        return false;
     }
 
 }//@end
