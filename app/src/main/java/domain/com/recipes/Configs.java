@@ -44,25 +44,25 @@ public class Configs extends Application {
 
     // FOOD CATEGORIES ARRAY (editable)
     public static String[] categoriesArray = new String[] {
-            "Hot Drinks",
-            "Shisha",
-            "Sandwich",
-            "Fahita",
             "Soup",
-            "Appetizer",
             "Salad",
+            "Appetizer",
             "Pasta",
             "Main Dish",
-            "Desserts",
+            "Fahita",
             "Pizza",
             "Burger Jumbo",
+            "Sandwich",
+            "Desserts",
             "Crepe",
+            "Hot Drinks",
             "Cocktails",
-            "Milk Shake",
-            "Mix Shake",
             "Ice cream",
             "Frappe",
             "Juices",
+            "Milk Shake",
+            "Mix Shake",
+            "Shisha",
 
 
 
