@@ -1,13 +1,16 @@
 package domain.com.recipes;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.ColorSpace;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -31,7 +34,28 @@ public class Order extends AppCompatActivity {
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1,
-                Array );
+                Array ){
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent){
+
+                View view = super.getView(position, convertView, parent);
+
+                TextView textview = (TextView) view.findViewById(android.R.id.text1);
+                if ((getResources().getConfiguration().screenLayout &
+                        Configuration.SCREENLAYOUT_SIZE_MASK) ==
+                        Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+                    // on a large screen device ...
+                    textview.setTextSize(30);
+                }
+                //Set your Font Size Here.
+
+
+                return view;
+            }
+        };
+
+
+
         myref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

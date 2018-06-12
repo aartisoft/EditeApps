@@ -62,7 +62,7 @@ public class Shopping extends AppCompatActivity {
     /* Variables */
     List<String> ingredientsArray;
     SharedPreferences prefs;
-
+    ListAdapter adapter;
 
 
     @Override
@@ -89,10 +89,12 @@ public class Shopping extends AppCompatActivity {
                                          Btn_send.setOnClickListener(new View.OnClickListener() {
                                              @Override
                                              public void onClick(View view) {
+                                                 Configs.showPD("Please Wait",Shopping.this);
                                                  if (Tablet.getText().toString().isEmpty()){
 
+                                                     dialog.dismiss();
                                                      Configs.simpleAlert("Please Enter Order Name ",Shopping.this);
-
+                                                     Configs.hidePD();
 
                                                  }
                                                  else {
@@ -116,6 +118,18 @@ public class Shopping extends AppCompatActivity {
                                                                  if ( finalI == (ingredientsArray.size()-1)) {
                                                                      Configs.simpleAlert(" Sent Successfully  ", Shopping.this);
                                                                      dialog.dismiss();
+
+                                                                     Configs.hidePD();
+                                                                    //clear And save
+                                                                     ingredientsArray.clear();
+                                                                     SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Shopping.this);
+                                                                     prefs.edit().putString("shoppingString"," ").apply();
+
+                                                                     //refresh
+                                                                     adapter.notifyDataSetChanged();
+                                                                     shoppingListView.deferNotifyDataSetChanged();
+
+
                                                                  }
                                                              }
                                                          });
@@ -230,37 +244,12 @@ public class Shopping extends AppCompatActivity {
 
     // MARK: - SETUP SHOPPING LISTVIEW -------------------------------------------------------
     void setupShoppingListView() {
-        class ListAdapter extends BaseAdapter {
-            private Context context;
-            private ListAdapter(Context context, List<String> objects) {
-                super();
-                this.context = context;
-            }
 
-            // CONFIGURE CELL
-            @Override
-            public View getView(final int position, View cell, ViewGroup parent) {
-                if (cell == null) {
-                    LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                    assert inflater != null;
-                    cell = inflater.inflate(R.layout.cell_shopping_list, null);
-                }
-
-                // Get ingredient
-                TextView ingrTxt = cell.findViewById(R.id.cslIngredientTxt);
-                ingrTxt.setText(ingredientsArray.get(position));
-
-                return cell;
-            }
-            @Override public int getCount() { return ingredientsArray.size(); }
-            @Override public Object getItem(int position) { return ingredientsArray.get(position); }
-            @Override public long getItemId(int position) { return position; }
-        }
 
 
         // Init ListView and set its adapter
         shoppingListView =  findViewById(R.id.shopShoppingListView);
-        final ListAdapter adapter = new ListAdapter(Shopping.this, ingredientsArray);
+         adapter = new ListAdapter(Shopping.this, ingredientsArray);
         shoppingListView.setAdapter(adapter);
 
 
@@ -290,6 +279,31 @@ public class Shopping extends AppCompatActivity {
 
 
 
+    class ListAdapter extends BaseAdapter {
+        private Context context;
+        private ListAdapter(Context context, List<String> objects) {
+            super();
+            this.context = context;
+        }
 
+        // CONFIGURE CELL
+        @Override
+        public View getView(final int position, View cell, ViewGroup parent) {
+            if (cell == null) {
+                LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                assert inflater != null;
+                cell = inflater.inflate(R.layout.cell_shopping_list, null);
+            }
+
+            // Get ingredient
+            TextView ingrTxt = cell.findViewById(R.id.cslIngredientTxt);
+            ingrTxt.setText(ingredientsArray.get(position));
+
+            return cell;
+        }
+        @Override public int getCount() { return ingredientsArray.size(); }
+        @Override public Object getItem(int position) { return ingredientsArray.get(position); }
+        @Override public long getItemId(int position) { return position; }
+    }
 
 }// @end
