@@ -33,33 +33,6 @@ String Key;
         setContentView(R.layout.activity_orderdetails);
         ArrayDetails = new ArrayList<String>();
         final ListView List_view = (ListView) findViewById(R.id.List_viewDetails);
-
-
-
-
-        Bundle bundle = getIntent().getExtras();
-        if(bundle != null){
-            Key = bundle.getString("Key");
-
-        }
-
-        DatabaseReference myref = FirebaseDatabase.getInstance().getReference("Kitchen").child(Key);
-        myref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()) {
-                    for (DataSnapshot data : dataSnapshot.getChildren()) {
-                        ArrayDetails.add(data.getValue(String.class));
-
-                    }
-                }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(Orderdetails.this, "error"+databaseError.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1,
@@ -84,7 +57,42 @@ String Key;
         };
 
 
-        List_view.setAdapter(arrayAdapter);
+
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null){
+            Key = bundle.getString("Key");
+            Toast.makeText(this, ""+Key, Toast.LENGTH_SHORT).show();
+
+                DatabaseReference myref = FirebaseDatabase.getInstance().getReference("Kitchen").child(Key);
+                myref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.exists()) {
+                            for (DataSnapshot data : dataSnapshot.getChildren()) {
+                                ArrayDetails.add(data.getValue(String.class));
+                                arrayAdapter.notifyDataSetChanged();
+                                List_view.deferNotifyDataSetChanged();
+                            }
+                        }
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Toast.makeText(Orderdetails.this, "error"+databaseError.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+
+
+                List_view.setAdapter(arrayAdapter);
+
+            }
+
+
+
+
+
+
 
     }
 
@@ -139,5 +147,9 @@ String Key;
         return super.onOptionsItemSelected(item);
         }
 
+    @Override
+    public void onBackPressed() {
+      finish();
     }
+}
 
