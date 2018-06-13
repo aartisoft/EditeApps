@@ -2,7 +2,12 @@ package domain.com.recipes;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.ColorSpace;
+import android.media.MediaPlayer;
+import android.os.AsyncTask;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +18,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,7 +28,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class Order extends AppCompatActivity {
-    ArrayList<String> Array ;
+    private ArrayList<String> Array ;
+    private boolean After10second = false;
+    private boolean ViewColor = false ;
+    private  AsyncTask <Void , Void , Void > a ;
+    private String LastPosition;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +58,20 @@ public class Order extends AppCompatActivity {
                         Configuration.SCREENLAYOUT_SIZE_MASK) ==
                         Configuration.SCREENLAYOUT_SIZE_XLARGE) {
                     // on a large screen device ...
+
+
+                    //Set your Font Size Here.
                     textview.setTextSize(30);
                 }
-                //Set your Font Size Here.
+             if(Array.get(position).equals(LastPosition)){
 
+                    view.setBackgroundColor(Color.parseColor("#91DC5A"));
+                
+             }
+             else {
+
+                 view.setBackgroundResource(android.R.color.transparent);
+             }
 
                 return view;
             }
@@ -57,16 +80,34 @@ public class Order extends AppCompatActivity {
 
 
         myref.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 if(dataSnapshot.exists()) {
+
                     Array.clear();
+
                     for (DataSnapshot data : dataSnapshot.getChildren()) {
+
                         Array.add(data.getKey());
                         arrayAdapter.notifyDataSetChanged();
                         List_view.deferNotifyDataSetChanged();
+
+
+
+
+
                     }
+
+
+
+
                 }
+
+
+
+
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -74,6 +115,56 @@ public class Order extends AppCompatActivity {
             }
         });
 
+
+        a =   new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                try {
+                    Thread.sleep(10000);
+                    After10second = true ;
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        }.execute();
+
+        myref.addChildEventListener(new ChildEventListener() {
+
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+
+
+              if(After10second) {
+                  final MediaPlayer player = MediaPlayer.create(Order.this, R.raw.plucky);
+                  player.start();
+                  LastPosition = dataSnapshot.getKey();
+
+              }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
 
@@ -91,4 +182,12 @@ public class Order extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        a.cancel(true);
+        Array.clear();
+        After10second = false ;
+        finish();
+
+    }
 }

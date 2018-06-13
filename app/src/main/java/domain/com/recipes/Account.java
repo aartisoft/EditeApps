@@ -62,7 +62,8 @@ public class Account extends AppCompatActivity {
     ListView myRecipesListView;
     GridView likedRecipesGridView;
 
-
+    Button Orders;
+    Button tab_two;
 
     /* Variables */
     List<ParseObject> myRecipesArray;
@@ -81,10 +82,14 @@ public class Account extends AppCompatActivity {
         if (ParseUser.getCurrentUser().getUsername() == null) {
             noUserLayout.setVisibility(View.VISIBLE);
             mainLayout.setVisibility(View.INVISIBLE);
+            tab_two.setVisibility(View.VISIBLE);
+            Orders.setVisibility(View.GONE);
 
         } else {
             noUserLayout.setVisibility(View.INVISIBLE);
             mainLayout.setVisibility(View.VISIBLE);
+            Orders.setVisibility(View.VISIBLE);
+            tab_two.setVisibility(View.GONE);
 
             // Call queries
             queryMyRecipes();
@@ -114,9 +119,9 @@ public class Account extends AppCompatActivity {
 
         // Init TabBar buttons
         Button tab_one = findViewById(R.id.tab_one);
-       Button tab_two = findViewById(R.id.tab_two);
+        tab_two = findViewById(R.id.tab_two);
        Button tab_three = findViewById(R.id.tab_three);
-       Button Orders = findViewById(R.id.Order);
+       Orders = findViewById(R.id.Order);
 
 
         tab_one.setOnClickListener(new View.OnClickListener() {
@@ -225,6 +230,8 @@ public class Account extends AppCompatActivity {
 
                                       noUserLayout.setVisibility(View.VISIBLE);
                                       mainLayout.setVisibility(View.INVISIBLE);
+                                      Orders.setVisibility(View.GONE);
+                                      tab_two.setVisibility(View.VISIBLE);
                                   }});
                           }})
                       .setNegativeButton("Cancel", null)
