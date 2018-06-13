@@ -66,7 +66,7 @@ public class Order extends AppCompatActivity {
              if(Array.get(position).equals(LastPosition)){
 
                     view.setBackgroundColor(Color.parseColor("#91DC5A"));
-                
+
              }
              else {
 
@@ -100,7 +100,12 @@ public class Order extends AppCompatActivity {
 
                     }
 
+                    for(int i = 0 ; i < Array.size() ; i++){
+                        if(Array.get(i).equals(LastPosition)){
+                            List_view.smoothScrollToPosition(i);
+                        }
 
+                    }
 
 
                 }
@@ -141,6 +146,8 @@ public class Order extends AppCompatActivity {
                   final MediaPlayer player = MediaPlayer.create(Order.this, R.raw.plucky);
                   player.start();
                   LastPosition = dataSnapshot.getKey();
+
+
 
               }
             }
