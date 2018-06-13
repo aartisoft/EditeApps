@@ -65,10 +65,8 @@ import java.util.List;
 public class Home extends AppCompatActivity {
 
     /* Views */
-
     LinearLayout searchLayout;
     EditText searchTxt;
-    connectionDetect co;
 int Width = 150;
 
     /* Variables */
@@ -117,7 +115,8 @@ int Width = 150;
         }
 
     }
-///////////////////////
+
+
 
 
 
@@ -129,10 +128,12 @@ int Width = 150;
         super.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
-
-
         // Hide ActionBar
         getSupportActionBar().hide();
+
+
+        //In case of having no INTERNET Connection  ////(new)
+
 
 
         // Init views
@@ -253,9 +254,6 @@ int Width = 150;
         mAdView.loadAd(adRequest);
 */
     }// end onCreate()
-
-    ///////In case of no internet connection
-
 
 
 
@@ -570,7 +568,30 @@ int Width = 150;
                 // error in query
                 } else {
                     dialog.dismiss();
-                    Configs.simpleAlert(error.getMessage(), Home.this);
+
+                    if(!isNetworkConnected()) {
+                        final AlertDialog.Builder warning = new AlertDialog.Builder(Home.this);
+                        warning.setTitle("No Connection");
+                        warning.setMessage("Please check internet connection or go offline Mode .");
+                        warning.setPositiveButton("Ok", null);
+                        warning.setNeutralButton("Offline Mode", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                Intent a = new Intent(Home.this, Offline.class);
+
+                                startActivity(a);
+                                finish();
+                            }
+
+                        });
+                        warning.show();
+
+                    }
+                    else {
+
+                        Configs.simpleAlert(error.getMessage(), Home.this);
+                    }
         }}});
 
     }
@@ -603,5 +624,11 @@ int Width = 150;
         imm.hideSoftInputFromWindow(searchTxt.getWindowToken(), 0);
     }
 
+
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null;
+    }
 
 }//@end
