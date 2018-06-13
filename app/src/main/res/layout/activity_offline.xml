@@ -115,6 +115,15 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/juicees"
                 />
+
+            <ImageView
+                android:scaleType="centerInside"
+                android:layout_marginTop="10px"
+                android:id="@+id/menu13"
+                android:layout_below="@id/menu12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/powerdrinks"/>
             <ImageView
                 android:scaleType="centerInside"
                 android:layout_marginTop="10px"
@@ -124,15 +133,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/maddniees"
                 />
-            <ImageView
-                android:scaleType="centerInside"
-                android:layout_marginTop="10px"
-                android:id="@+id/menu13"
-                android:layout_below="@id/menu12"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/powerdrinks"
-                />
+
         </RelativeLayout>
     </ScrollView>
 
