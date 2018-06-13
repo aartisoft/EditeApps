@@ -24,13 +24,114 @@
             android:background="@drawable/souup"
             />
             <ImageView
+            android:scaleType="centerInside"
+            android:layout_marginTop="10px"
+            android:id="@+id/menu2"
+            android:layout_below="@id/menu1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/salaad"
+            />
+            <ImageView
                 android:scaleType="centerInside"
                 android:layout_marginTop="10px"
-                android:id="@+id/menu2"
-                android:layout_below="@id/menu1"
+                android:id="@+id/menu3"
+                android:layout_below="@id/menu2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/salaad"
+                android:background="@drawable/fahitta"
+                />
+
+            <ImageView
+                android:scaleType="centerInside"
+                android:layout_marginTop="10px"
+                android:id="@+id/menu4"
+                android:layout_below="@id/menu3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/pizzzzz"
+                />
+            <ImageView
+                android:scaleType="centerInside"
+                android:layout_marginTop="10px"
+                android:id="@+id/menu5"
+                android:layout_below="@id/menu4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/burgger"
+                />
+            <ImageView
+            android:scaleType="centerInside"
+            android:layout_marginTop="10px"
+            android:id="@+id/menu6"
+            android:layout_below="@id/menu5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dessertss"
+            />
+            <ImageView
+                android:scaleType="centerInside"
+                android:layout_marginTop="10px"
+                android:id="@+id/menu7"
+                android:layout_below="@id/menu6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/disserreseet"
+                />
+            <ImageView
+                android:scaleType="centerInside"
+                android:layout_marginTop="10px"
+                android:id="@+id/menu8"
+                android:layout_below="@id/menu7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/coktaillllls"
+                />
+            <ImageView
+                android:scaleType="centerInside"
+                android:layout_marginTop="10px"
+                android:id="@+id/menu9"
+                android:layout_below="@id/menu8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/mixshakkkke"
+                />
+            <ImageView
+                android:scaleType="centerInside"
+                android:layout_marginTop="10px"
+                android:id="@+id/menu10"
+                android:layout_below="@id/menu9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/frafra"
+                />
+
+            <ImageView
+                android:scaleType="centerInside"
+                android:layout_marginTop="10px"
+                android:id="@+id/menu11"
+                android:layout_below="@id/menu10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/juicees"
+                />
+            <ImageView
+                android:scaleType="centerInside"
+                android:layout_marginTop="10px"
+                android:id="@+id/menu12"
+                android:layout_below="@id/menu11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/maddniees"
+                />
+            <ImageView
+                android:scaleType="centerInside"
+                android:layout_marginTop="10px"
+                android:id="@+id/menu13"
+                android:layout_below="@id/menu12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/powerdrinks"
                 />
         </RelativeLayout>
     </ScrollView>
