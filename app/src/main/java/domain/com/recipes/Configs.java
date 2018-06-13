@@ -53,18 +53,18 @@ public class Configs extends Application {
             "Main Dish",
             "Fahita",
             "Pizza",
-
-            "Hot Drinks",
-            "Shisha",
+            "Burger Jumbo",
             "Sandwich",
             "Desserts",
             "Crepe",
+            "Hot Drinks",
             "Cocktails",
-            "Milk Shake",
-            "Mix Shake",
             "Ice cream",
             "Frappe",
             "Juices",
+            "Mix Shake",
+            "Milk Shake",
+            "Shisha",
 
 
 

@@ -24,12 +24,12 @@
             android:background="@drawable/souup"
             />
             <ImageView
-                android:scaleType="centerInside"
+                android:scaleType="fitXY"
                 android:layout_marginTop="10px"
                 android:id="@+id/menu2"
                 android:layout_below="@id/menu1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/salaad"
                 />
         </RelativeLayout>
