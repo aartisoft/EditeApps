@@ -65,8 +65,10 @@ import java.util.List;
 public class Home extends AppCompatActivity {
 
     /* Views */
+
     LinearLayout searchLayout;
     EditText searchTxt;
+    connectionDetect co;
 int Width = 150;
 
     /* Variables */
@@ -115,8 +117,7 @@ int Width = 150;
         }
 
     }
-
-
+///////////////////////
 
 
 
@@ -128,31 +129,11 @@ int Width = 150;
         super.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
+
+
         // Hide ActionBar
         getSupportActionBar().hide();
 
-
-        //In case of having no INTERNET Connection  ////(new)
-
-        if(isConnectingToInternet(Home.this)){
-
-
-        }else {
-            //  Toast.makeText(this, "There is no internet connection :(", Toast.LENGTH_SHORT).show();
-            final AlertDialog.Builder warning = new AlertDialog.Builder(Home.this);
-            warning.setTitle("No Connection");
-            warning.setMessage("Please check internet connection or go offline");
-            warning.setNegativeButton("cancel", null);
-            warning.setPositiveButton("Go Offline", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    Intent a = new Intent(Home.this, Offline.class);
-
-                    startActivity(a);
-                }
-
-            });
-        }
 
         // Init views
         TextView titleTxt = findViewById(R.id.hTitleTxt);
@@ -272,6 +253,9 @@ int Width = 150;
         mAdView.loadAd(adRequest);
 */
     }// end onCreate()
+
+    ///////In case of no internet connection
+
 
 
 
@@ -619,21 +603,5 @@ int Width = 150;
         imm.hideSoftInputFromWindow(searchTxt.getWindowToken(), 0);
     }
 
-    public static boolean isConnectingToInternet(Context context)    {
-        ConnectivityManager connectivity =
-                (ConnectivityManager) context.getSystemService(
-                        Context.CONNECTIVITY_SERVICE);
-        if (connectivity != null)
-        {
-            NetworkInfo[] info = connectivity.getAllNetworkInfo();
-            if (info != null)
-                for (int i = 0; i < info.length; i++)
-                    if (info[i].getState() == NetworkInfo.State.CONNECTED)
-                    {
-                        return true;
-                    }
-        }
-        return false;
-    }
 
 }//@end
