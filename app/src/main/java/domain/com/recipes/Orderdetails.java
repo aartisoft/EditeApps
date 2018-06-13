@@ -44,7 +44,7 @@ String Key;
         }
 
         DatabaseReference myref = FirebaseDatabase.getInstance().getReference("Kitchen").child(Key);
-        myref.addListenerForSingleValueEvent(new ValueEventListener() {
+        myref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()) {
