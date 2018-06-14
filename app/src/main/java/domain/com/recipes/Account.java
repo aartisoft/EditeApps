@@ -325,7 +325,7 @@ public class Account extends AppCompatActivity {
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery(Configs.RECIPES_CLASS_NAME);
         query.whereEqualTo(Configs.RECIPES_USER_POINTER, currUser);
-       // query.setLimit(10);
+        query.setLimit(1000);
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> objects, ParseException error) {
                 if (error == null) {
