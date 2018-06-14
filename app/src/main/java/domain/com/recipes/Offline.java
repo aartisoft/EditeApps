@@ -14,17 +14,17 @@ ImageView menu1,menu2,menu3,menu4,menu5,menu6,menu7,menu8,menu9,menu10,menu11,me
         getSupportActionBar().hide();
         menu1 = findViewById(R.id.menu1);
         menu2 = findViewById(R.id.menu2);
-        menu3 = findViewById(R.id.menu3);
-        menu4 = findViewById(R.id.menu4);
-        menu5 = findViewById(R.id.menu5);
-        menu6 = findViewById(R.id.menu6);
-        menu7 = findViewById(R.id.menu7);
-        menu8 = findViewById(R.id.menu8);
-        menu9 = findViewById(R.id.menu9);
-        menu10 = findViewById(R.id.menu10);
-        menu11= findViewById(R.id.menu11);
-        menu12 = findViewById(R.id.menu12);
-        menu13= findViewById(R.id.menu13);
+//        menu3 = findViewById(R.id.menu3);
+//        menu4 = findViewById(R.id.menu4);
+//        menu5 = findViewById(R.id.menu5);
+//        menu6 = findViewById(R.id.menu6);
+//        menu7 = findViewById(R.id.menu7);
+//        menu8 = findViewById(R.id.menu8);
+//        menu9 = findViewById(R.id.menu9);
+//        menu10 = findViewById(R.id.menu10);
+//        menu11= findViewById(R.id.menu11);
+//        menu12 = findViewById(R.id.menu12);
+//        menu13= findViewById(R.id.menu13);
 
     }
 }
